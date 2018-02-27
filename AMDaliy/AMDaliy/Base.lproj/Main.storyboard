@@ -9,11 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Water Fall Scene-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AMWaterFallScene" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kDh-lW-vbk"/>
                         <viewControllerLayoutGuide type="bottom" id="EEB-OY-fF3"/>
@@ -32,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemReuse" id="Xh7-gm-rUT">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemReuse" id="Xh7-gm-rUT" customClass="AMWaterFallCell">
                                         <rect key="frame" x="0.0" y="0.0" width="117" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -41,6 +40,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一二三四" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPr-V1-9rh">
                                                     <rect key="frame" x="13" y="8.5" width="90" height="40"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="9HY-aF-eVt"/>
                                                         <constraint firstAttribute="height" constant="40" id="TKI-Wf-9U2"/>
@@ -48,6 +48,11 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="22"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                         </view>
@@ -55,8 +60,15 @@
                                             <constraint firstItem="dPr-V1-9rh" firstAttribute="centerX" secondItem="Xh7-gm-rUT" secondAttribute="centerX" id="3sX-4l-KW4"/>
                                             <constraint firstItem="dPr-V1-9rh" firstAttribute="centerY" secondItem="Xh7-gm-rUT" secondAttribute="centerY" id="YjN-WJ-NGV"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="titleLab" destination="dPr-V1-9rh" id="BQ2-pq-0LA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2GW-ef-pQY"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ntn-d5-bCm"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,14 +79,17 @@
                             <constraint firstItem="EEB-OY-fF3" firstAttribute="top" secondItem="I8j-QO-7gO" secondAttribute="bottom" id="pM8-OS-cu7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="I8j-QO-7gO" id="374-B2-PKC"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1152.8" y="231.63418290854574"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="pss-MB-2yb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mrr-Lw-ypT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="QkF-MM-eiQ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="R6R-P1-xy0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -138,6 +153,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="V5E-O4-BpG"/>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrr-Lw-ypT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="367.19999999999999" y="231.63418290854574"/>
         </scene>

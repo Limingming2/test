@@ -10,4 +10,6 @@
 
 @interface AMWaterFallCell : UICollectionViewCell
 
+- (void)loadInfo:(id)info;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "AMWaterFallScene.h"
 #import "AMWaterFallCell.h"
+#import "AMWaterFlowLayout.h"
 
 static NSString *const kItemReuse = @"ItemReuse";
 
@@ -20,7 +21,10 @@ static NSString *const kItemReuse = @"ItemReuse";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.dataArr = @[@"a", @"b",@"c",@"d",@"e",@"f", @"g",@"h",@"i",@"j",@"k", @"l",@"m",@"n",@"o",@"p", @"q",@"r",@"s",@"t",@"u",@"v",@"w",@"x",@"y",@"z"];
+    AMWaterFlowLayout *layout = [[AMWaterFlowLayout alloc] init];
+    layout.dataArr = self.dataArr;
+    self.collectionView.collectionViewLayout = layout;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +37,7 @@ static NSString *const kItemReuse = @"ItemReuse";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     AMWaterFallCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kItemReuse forIndexPath:indexPath];
-    
+    [cell loadInfo:self.dataArr[indexPath.item]];
     return cell;
 }
 
@@ -41,7 +45,10 @@ static NSString *const kItemReuse = @"ItemReuse";
 {
     return self.dataArr.count;
 }
-
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
 
 
 
