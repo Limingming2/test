@@ -29,8 +29,8 @@
         self.titleLab.textColor = [UIColor whiteColor];
         self.titleLab.backgroundColor = [UIColor blueColor];
     }else {
-        self.titleLab.textColor = [UIColor lightGrayColor];
-        self.titleLab.backgroundColor = [UIColor blackColor];
+        self.titleLab.textColor = [UIColor blackColor];
+        self.titleLab.backgroundColor = [UIColor lightGrayColor];
     }
 }
 

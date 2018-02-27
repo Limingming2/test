@@ -26,6 +26,10 @@
     
 }
 
+- (CGSize)collectionViewContentSize
+{
+    return CGSizeMake(kScreenWidth, (kItemHeight + kLineMargin) * 2 * ceil((CGFloat)self.dataArr.count / 5));
+}
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -58,7 +62,6 @@
     kLineMargin + (kItemHeight * 2 + kLineMargin * 2) * section :
     kLineMargin + (kItemHeight * 2 + kLineMargin * 2) * section + kLineMargin + kItemHeight;
     attri.frame = CGRectMake(x, y, kItemWidth, kItemHeight);
-    NSLog(@"%@", NSStringFromCGRect(attri.frame));
     return attri;
 }
 
