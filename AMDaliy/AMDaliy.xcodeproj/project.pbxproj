@@ -27,12 +27,14 @@
 		6CC043FC204E9464007C49B2 /* TZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC043EB204E9464007C49B2 /* TZProgressView.m */; };
 		6CC043FD204E9464007C49B2 /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC043ED204E9464007C49B2 /* TZVideoPlayerController.m */; };
 		6CC043FE204E9464007C49B2 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC043EF204E9464007C49B2 /* UIView+Layout.m */; };
+		6CF97BA0208257BD0046343A /* AMFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF97B9F208257BD0046343A /* AMFMDB.m */; };
 		BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244742043DE1F00C05E75 /* AppDelegate.m */; };
 		BAB244782043DE1F00C05E75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244772043DE1F00C05E75 /* ViewController.m */; };
 		BAB2447B2043DE1F00C05E75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB244792043DE1F00C05E75 /* Main.storyboard */; };
 		BAB2447D2043DE1F00C05E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB2447C2043DE1F00C05E75 /* Assets.xcassets */; };
 		BAB244802043DE1F00C05E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB2447E2043DE1F00C05E75 /* LaunchScreen.storyboard */; };
 		BAB244832043DE1F00C05E75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244822043DE1F00C05E75 /* main.m */; };
+		E65F760EAEF7C3B40DEDDBEF /* Pods_AMDaliy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB2FFFEA19E3BD200468B93 /* Pods_AMDaliy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,9 @@
 		6CC043ED204E9464007C49B2 /* TZVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZVideoPlayerController.m; sourceTree = "<group>"; };
 		6CC043EE204E9464007C49B2 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		6CC043EF204E9464007C49B2 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		6CF97B9E208257BD0046343A /* AMFMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMFMDB.h; sourceTree = "<group>"; };
+		6CF97B9F208257BD0046343A /* AMFMDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMFMDB.m; sourceTree = "<group>"; };
+		8AB2FFFEA19E3BD200468B93 /* Pods_AMDaliy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMDaliy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB244702043DE1F00C05E75 /* AMDaliy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMDaliy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB244732043DE1F00C05E75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAB244742043DE1F00C05E75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +90,8 @@
 		BAB2447F2043DE1F00C05E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAB244812043DE1F00C05E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAB244822043DE1F00C05E75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9E8578F494E5C8273E79720 /* Pods-AMDaliy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMDaliy.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMDaliy/Pods-AMDaliy.release.xcconfig"; sourceTree = "<group>"; };
+		FC727CBEC693D99098D9A16A /* Pods-AMDaliy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMDaliy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AMDaliy/Pods-AMDaliy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +99,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E65F760EAEF7C3B40DEDDBEF /* Pods_AMDaliy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0547BFBF661AC0661C4C57A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC727CBEC693D99098D9A16A /* Pods-AMDaliy.debug.xcconfig */,
+				C9E8578F494E5C8273E79720 /* Pods-AMDaliy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6C0CC8FA2064CF8600F41C42 /* AMEnableBtn */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,11 +182,22 @@
 			path = TZImagePickerController;
 			sourceTree = "<group>";
 		};
+		6CF97B9D208254510046343A /* AMFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				6CF97B9E208257BD0046343A /* AMFMDB.h */,
+				6CF97B9F208257BD0046343A /* AMFMDB.m */,
+			);
+			path = AMFMDB;
+			sourceTree = "<group>";
+		};
 		BAB244672043DE1F00C05E75 = {
 			isa = PBXGroup;
 			children = (
 				BAB244722043DE1F00C05E75 /* AMDaliy */,
 				BAB244712043DE1F00C05E75 /* Products */,
+				0547BFBF661AC0661C4C57A0 /* Pods */,
+				CE208E8609EE7B4F31B5A7AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +220,7 @@
 				6CC043CE204E9313007C49B2 /* AMSelectImage */,
 				6CC043C4204E92F4007C49B2 /* AMWaterFall */,
 				6C0CC8FA2064CF8600F41C42 /* AMEnableBtn */,
+				6CF97B9D208254510046343A /* AMFMDB */,
 				BAB244792043DE1F00C05E75 /* Main.storyboard */,
 				BAB2447C2043DE1F00C05E75 /* Assets.xcassets */,
 				BAB2447E2043DE1F00C05E75 /* LaunchScreen.storyboard */,
@@ -201,6 +230,14 @@
 			path = AMDaliy;
 			sourceTree = "<group>";
 		};
+		CE208E8609EE7B4F31B5A7AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AB2FFFEA19E3BD200468B93 /* Pods_AMDaliy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAB244862043DE1F00C05E75 /* Build configuration list for PBXNativeTarget "AMDaliy" */;
 			buildPhases = (
+				5C179897B72791710AEF1747 /* [CP] Check Pods Manifest.lock */,
 				BAB2446C2043DE1F00C05E75 /* Sources */,
 				BAB2446D2043DE1F00C05E75 /* Frameworks */,
 				BAB2446E2043DE1F00C05E75 /* Resources */,
+				73105FEAE148E0E08F3F7F39 /* [CP] Embed Pods Frameworks */,
+				FACB24C64B672EBF3A18216E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +309,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C179897B72791710AEF1747 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AMDaliy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73105FEAE148E0E08F3F7F39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AMDaliy/Pods-AMDaliy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AMDaliy/Pods-AMDaliy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FACB24C64B672EBF3A18216E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AMDaliy/Pods-AMDaliy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BAB2446C2043DE1F00C05E75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -285,6 +379,7 @@
 				BAB244832043DE1F00C05E75 /* main.m in Sources */,
 				6CC043FB204E9464007C49B2 /* TZPhotoPreviewController.m in Sources */,
 				BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */,
+				6CF97BA0208257BD0046343A /* AMFMDB.m in Sources */,
 				6CC043FA204E9464007C49B2 /* TZPhotoPreviewCell.m in Sources */,
 				6CC043FE204E9464007C49B2 /* UIView+Layout.m in Sources */,
 				6CC043F8204E9464007C49B2 /* TZLocationManager.m in Sources */,
@@ -427,10 +522,11 @@
 		};
 		BAB244872043DE1F00C05E75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC727CBEC693D99098D9A16A /* Pods-AMDaliy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q4A6B5RG86;
+				DEVELOPMENT_TEAM = 2QT397HFWQ;
 				INFOPLIST_FILE = AMDaliy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -442,10 +538,11 @@
 		};
 		BAB244882043DE1F00C05E75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E8578F494E5C8273E79720 /* Pods-AMDaliy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q4A6B5RG86;
+				DEVELOPMENT_TEAM = 2QT397HFWQ;
 				INFOPLIST_FILE = AMDaliy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
