@@ -2,13 +2,36 @@ PODS:
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - IJKMediaFramework (0.1.1)
+  - ZFPlayer (3.1.4):
+    - ZFPlayer/Core (= 3.1.4)
+  - ZFPlayer/AVPlayer (3.1.4):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (3.1.4):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (3.1.4)
+  - ZFPlayer/ijkplayer (3.1.4):
+    - IJKMediaFramework
+    - ZFPlayer/Core
 
 DEPENDENCIES:
   - FMDB
+  - ZFPlayer (~> 3.0)
+  - ZFPlayer/AVPlayer (~> 3.0)
+  - ZFPlayer/ControlView (~> 3.0)
+  - ZFPlayer/ijkplayer (~> 3.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FMDB
+    - IJKMediaFramework
+    - ZFPlayer
 
 SPEC CHECKSUMS:
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  IJKMediaFramework: 7c4fd53fd4480038a48514192dd449c80712499b
+  ZFPlayer: 36fa2967a257c619b7e8b572c79de7b61adde3cd
 
-PODFILE CHECKSUM: d62557546d8677a7b6aca9235979d84b0d4c62e8
+PODFILE CHECKSUM: a04b33cb469f37bd99b7062e78c296c4d8f36cf3
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
