@@ -31,9 +31,6 @@
 		6C3EDCBF2114506E002DC635 /* AMPlayerListScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCBE2114506E002DC635 /* AMPlayerListScene.m */; };
 		6C3EDCC2211461CD002DC635 /* AMPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCC1211461CD002DC635 /* AMPlayerCell.m */; };
 		6C3EDCCA21181EA0002DC635 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCC921181E9F002DC635 /* AMBlurView.m */; };
-		6C3EDCCE211841B1002DC635 /* UIImageView+AMImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCCD211841B1002DC635 /* UIImageView+AMImageView.m */; };
-		6C3EDCD421184A3F002DC635 /* AMVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCD321184A3F002DC635 /* AMVideoModel.m */; };
-		6C76C89D211AF0A500395ADC /* AMCreateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76C89C211AF0A500395ADC /* AMCreateFile.m */; };
 		7E93D2AEDCFE590B052ED55D /* libPods-AMDaliy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C148C6E3686C676879327F1A /* libPods-AMDaliy.a */; };
 		BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244742043DE1F00C05E75 /* AppDelegate.m */; };
 		BAB244782043DE1F00C05E75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244772043DE1F00C05E75 /* ViewController.m */; };
@@ -91,13 +88,6 @@
 		6C3EDCC1211461CD002DC635 /* AMPlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMPlayerCell.m; sourceTree = "<group>"; };
 		6C3EDCC821181E9F002DC635 /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
 		6C3EDCC921181E9F002DC635 /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
-		6C3EDCCC211841B1002DC635 /* UIImageView+AMImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AMImageView.h"; sourceTree = "<group>"; };
-		6C3EDCCD211841B1002DC635 /* UIImageView+AMImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AMImageView.m"; sourceTree = "<group>"; };
-		6C3EDCD021184902002DC635 /* AMHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMHeader.pch; sourceTree = "<group>"; };
-		6C3EDCD221184A3F002DC635 /* AMVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMVideoModel.h; sourceTree = "<group>"; };
-		6C3EDCD321184A3F002DC635 /* AMVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMVideoModel.m; sourceTree = "<group>"; };
-		6C76C89B211AF0A500395ADC /* AMCreateFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMCreateFile.h; sourceTree = "<group>"; };
-		6C76C89C211AF0A500395ADC /* AMCreateFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMCreateFile.m; sourceTree = "<group>"; };
 		BAB244702043DE1F00C05E75 /* AMDaliy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMDaliy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB244732043DE1F00C05E75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAB244742043DE1F00C05E75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,9 +127,6 @@
 		6C3EDC772114069A002DC635 /* AMExpand */ = {
 			isa = PBXGroup;
 			children = (
-				6C76C89A211AF06F00395ADC /* AMTools */,
-				6C3EDCCF211848C1002DC635 /* AMMacro */,
-				6C3EDCCB21184179002DC635 /* AMCatagory */,
 				6C3EDCC721181E9F002DC635 /* AMBlurView */,
 				6C3EDC782114069A002DC635 /* TZImagePickerController */,
 			);
@@ -237,7 +224,6 @@
 		6C3EDCBC2114503B002DC635 /* AMPlayerList */ = {
 			isa = PBXGroup;
 			children = (
-				6C3EDCD121184A26002DC635 /* AMModel */,
 				6C3EDCBD2114506E002DC635 /* AMPlayerListScene.h */,
 				6C3EDCBE2114506E002DC635 /* AMPlayerListScene.m */,
 				6C3EDCC0211461CD002DC635 /* AMPlayerCell.h */,
@@ -253,41 +239,6 @@
 				6C3EDCC921181E9F002DC635 /* AMBlurView.m */,
 			);
 			path = AMBlurView;
-			sourceTree = "<group>";
-		};
-		6C3EDCCB21184179002DC635 /* AMCatagory */ = {
-			isa = PBXGroup;
-			children = (
-				6C3EDCCC211841B1002DC635 /* UIImageView+AMImageView.h */,
-				6C3EDCCD211841B1002DC635 /* UIImageView+AMImageView.m */,
-			);
-			path = AMCatagory;
-			sourceTree = "<group>";
-		};
-		6C3EDCCF211848C1002DC635 /* AMMacro */ = {
-			isa = PBXGroup;
-			children = (
-				6C3EDCD021184902002DC635 /* AMHeader.pch */,
-			);
-			path = AMMacro;
-			sourceTree = "<group>";
-		};
-		6C3EDCD121184A26002DC635 /* AMModel */ = {
-			isa = PBXGroup;
-			children = (
-				6C3EDCD221184A3F002DC635 /* AMVideoModel.h */,
-				6C3EDCD321184A3F002DC635 /* AMVideoModel.m */,
-			);
-			path = AMModel;
-			sourceTree = "<group>";
-		};
-		6C76C89A211AF06F00395ADC /* AMTools */ = {
-			isa = PBXGroup;
-			children = (
-				6C76C89B211AF0A500395ADC /* AMCreateFile.h */,
-				6C76C89C211AF0A500395ADC /* AMCreateFile.m */,
-			);
-			path = AMTools;
 			sourceTree = "<group>";
 		};
 		BAB244672043DE1F00C05E75 = {
@@ -454,7 +405,6 @@
 				6C3EDCBA2114069B002DC635 /* AMWaterFallScene.m in Sources */,
 				6C3EDCB22114069B002DC635 /* TZPhotoPreviewController.m in Sources */,
 				6C3EDCB82114069B002DC635 /* AMSelectImageScene.m in Sources */,
-				6C3EDCCE211841B1002DC635 /* UIImageView+AMImageView.m in Sources */,
 				6C3EDCB32114069B002DC635 /* TZProgressView.m in Sources */,
 				6C3EDCA72114069B002DC635 /* NSBundle+TZImagePicker.m in Sources */,
 				6C3EDCB92114069B002DC635 /* AMWaterFallCell.m in Sources */,
@@ -463,14 +413,12 @@
 				6C3EDCAC2114069B002DC635 /* TZImageManager.m in Sources */,
 				BAB244832043DE1F00C05E75 /* main.m in Sources */,
 				6C3EDCB52114069B002DC635 /* UIView+Layout.m in Sources */,
-				6C3EDCD421184A3F002DC635 /* AMVideoModel.m in Sources */,
 				6C3EDCB02114069B002DC635 /* TZPhotoPickerController.m in Sources */,
 				6C3EDCAA2114069B002DC635 /* TZGifPhotoPreviewController.m in Sources */,
 				6C3EDCB42114069B002DC635 /* TZVideoPlayerController.m in Sources */,
 				BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */,
 				6C3EDCAF2114069B002DC635 /* TZLocationManager.m in Sources */,
 				6C3EDCB72114069B002DC635 /* AMFMDB.m in Sources */,
-				6C76C89D211AF0A500395ADC /* AMCreateFile.m in Sources */,
 				6C3EDCBF2114506E002DC635 /* AMPlayerListScene.m in Sources */,
 				6C3EDCB62114069B002DC635 /* AMLoginScene.m in Sources */,
 				6C3EDCAB2114069B002DC635 /* TZImageCropManager.m in Sources */,
@@ -613,7 +561,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP2XYJWA4E;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/AMDaliy/AMExpand/AMMacro/AMHeader.pch";
 				INFOPLIST_FILE = AMDaliy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -630,7 +577,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP2XYJWA4E;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/AMDaliy/AMExpand/AMMacro/AMHeader.pch";
 				INFOPLIST_FILE = AMDaliy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

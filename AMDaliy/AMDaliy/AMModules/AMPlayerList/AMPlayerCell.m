@@ -7,7 +7,6 @@
 //
 
 #import "AMPlayerCell.h"
-#import "UIImageView+AMImageView.h"
 
 @interface AMPlayerCell ()
 
@@ -29,10 +28,9 @@
     // Configure the view for the selected state
 }
 
-- (void)loadInfo:(NSIndexPath *)indexPath withModel:(AMVideoModel *)model
+- (void)loadInfo:(NSIndexPath *)indexPath
 {
     self.imgView.tag = indexPath.row + 1000;
-    [self.imageView am_setImageWithVideoPath:model.videoPath];
 }
 
 @end

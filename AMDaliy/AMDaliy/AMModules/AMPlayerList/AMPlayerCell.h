@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AMVideoModel.h"
 
 @interface AMPlayerCell : UITableViewCell
 
-- (void)loadInfo:(NSIndexPath *)indexPath withModel:(AMVideoModel *)model;
+- (void)loadInfo:(NSIndexPath *)indexPath;
 
 @end
