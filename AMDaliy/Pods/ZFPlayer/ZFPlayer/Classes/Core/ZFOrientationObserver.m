@@ -81,17 +81,15 @@
         _duration = 0.25;
         _fullScreenMode = ZFFullScreenModeLandscape;
         _allowOrentitaionRotation = YES;
+        _roateType = ZFRotateTypeNormal;
     }
     return self;
 }
 
-- (instancetype)initWithRotateView:(UIView *)rotateView containerView:(UIView *)containerView {
-    if ([self init]) {
-        _roateType = ZFRotateTypeNormal;
-        _view = rotateView;
-        _containerView = containerView;
-    }
-    return self;
+- (void)updateRotateView:(UIView *)rotateView
+           containerView:(UIView *)containerView {
+    self.view = rotateView;
+    self.containerView = containerView;
 }
 
 - (void)cellModelRotateView:(UIView *)rotateView rotateViewAtCell:(UIView *)cell playerViewTag:(NSInteger)playerViewTag {
@@ -172,14 +170,24 @@
             self.fullScreen = NO;
         }
         if (self.orientationWillChange) self.orientationWillChange(self, self.isFullScreen);
+        
         [superview addSubview:self.view];
-        [UIView animateWithDuration:animated?self.duration:0 animations:^{
+        if (animated) {
+            [UIView animateWithDuration:self.duration animations:^{
+                self.view.frame = superview.bounds;
+                [self.view layoutIfNeeded];
+                [self interfaceOrientation:orientation];
+            } completion:^(BOOL finished) {
+                if (self.orientationDidChanged) self.orientationDidChanged(self, self.isFullScreen);
+            }];
+        } else {
             self.view.frame = superview.bounds;
             [self.view layoutIfNeeded];
-            [self interfaceOrientation:orientation];
-        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0 animations:^{
+                [self interfaceOrientation:orientation];
+            }];
             if (self.orientationDidChanged) self.orientationDidChanged(self, self.isFullScreen);
-        }];
+        }
         return;
     }
     
@@ -215,17 +223,25 @@
     }
     
     if (self.orientationWillChange) self.orientationWillChange(self, self.isFullScreen);
-    [UIView animateWithDuration:animated?self.duration:0 animations:^{
-        self.view.transform = [self getTransformRotationAngle:orientation];
-        [UIView animateWithDuration:animated?self.duration:0 animations:^{
-            self.view.frame = frame;
-            [self.view layoutIfNeeded];
+    if (animated) {
+        [UIView animateWithDuration:self.duration animations:^{
+            self.view.transform = [self getTransformRotationAngle:orientation];
+            [UIView animateWithDuration:self.duration animations:^{
+                self.view.frame = frame;
+                [self.view layoutIfNeeded];
+            }];
+        } completion:^(BOOL finished) {
+            [superview addSubview:self.view];
+            self.view.frame = superview.bounds;
+            if (self.orientationDidChanged) self.orientationDidChanged(self, self.isFullScreen);
         }];
-    } completion:^(BOOL finished) {
+    } else {
+        self.view.transform = [self getTransformRotationAngle:orientation];
         [superview addSubview:self.view];
         self.view.frame = superview.bounds;
+        [self.view layoutIfNeeded];
         if (self.orientationDidChanged) self.orientationDidChanged(self, self.isFullScreen);
-    }];
+    }
 }
 
 - (void)interfaceOrientation:(UIInterfaceOrientation)orientation {
@@ -254,9 +270,6 @@
 
 /// Gets the rotation Angle of the transformation.
 - (CGAffineTransform)getTransformRotationAngle:(UIInterfaceOrientation)orientation {
-    if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation) && orientation == UIInterfaceOrientationPortrait) {
-        return CGAffineTransformIdentity;
-    }
     if (orientation == UIInterfaceOrientationPortrait) {
         return CGAffineTransformIdentity;
     } else if (orientation == UIInterfaceOrientationLandscapeLeft){
@@ -285,14 +298,21 @@
     }
     if (self.orientationWillChange) self.orientationWillChange(self, self.isFullScreen);
     CGRect frame = [superview convertRect:superview.bounds toView:self.fullScreenContainerView];
-    [UIView animateWithDuration:animated?self.duration:0 animations:^{
-        self.view.frame = frame;
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
+    if (animated) {
+        [UIView animateWithDuration:self.duration animations:^{
+            self.view.frame = frame;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            [superview addSubview:self.view];
+            self.view.frame = superview.bounds;
+            if (self.orientationDidChanged) self.orientationDidChanged(self, self.isFullScreen);
+        }];
+    } else {
         [superview addSubview:self.view];
         self.view.frame = superview.bounds;
+        [self.view layoutIfNeeded];
         if (self.orientationDidChanged) self.orientationDidChanged(self, self.isFullScreen);
-    }];
+    }
 }
 
 - (void)exitFullScreenWithAnimated:(BOOL)animated {

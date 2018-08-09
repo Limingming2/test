@@ -250,6 +250,7 @@ static const CGFloat ZFPlayerControlViewAutoFadeOutTimeInterval = 0.25f;
 - (void)resetControlView {
     [self.portraitControlView resetControlView];
     [self.landScapeControlView resetControlView];
+    [self cancelAutoFadeOutControlView];
     self.bottomPgrogress.value = 0;
     self.bottomPgrogress.bufferValue = 0;
     self.floatControlView.hidden = YES;
@@ -271,6 +272,16 @@ static const CGFloat ZFPlayerControlViewAutoFadeOutTimeInterval = 0.25f;
     [self.portraitControlView showTitle:title fullScreenMode:fullScreenMode];
     [self.landScapeControlView showTitle:title fullScreenMode:fullScreenMode];
     [self.coverImageView setImageWithURLString:coverUrl placeholder:self.placeholderImage];
+}
+
+/// 设置标题、UIImage封面、全屏模式
+- (void)showTitle:(NSString *)title coverImage:(UIImage *)image fullScreenMode:(ZFFullScreenMode)fullScreenMode {
+    [self resetControlView];
+    [self layoutIfNeeded];
+    [self setNeedsDisplay];
+    [self.portraitControlView showTitle:title fullScreenMode:fullScreenMode];
+    [self.landScapeControlView showTitle:title fullScreenMode:fullScreenMode];
+    self.coverImageView.image = image;
 }
 
 #pragma mark - ZFPlayerControlViewDelegate
@@ -472,6 +483,7 @@ static const CGFloat ZFPlayerControlViewAutoFadeOutTimeInterval = 0.25f;
 - (void)sliderValueChangingValue:(CGFloat)value isForward:(BOOL)forward {
     self.fastProgressView.value = value;
     self.fastView.hidden = NO;
+    self.fastView.alpha = 1;
     if (forward) {
         self.fastImageView.image = ZFPlayer_Image(@"ZFPlayer_fast_forward");
     } else {
@@ -483,11 +495,22 @@ static const CGFloat ZFPlayerControlViewAutoFadeOutTimeInterval = 0.25f;
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideFastView) object:nil];
     [self performSelector:@selector(hideFastView) withObject:nil afterDelay:0.1];
+    
+    if (self.fastViewAnimated) {
+        [UIView animateWithDuration:0.4 animations:^{
+            self.fastView.transform = CGAffineTransformMakeTranslation(forward?10:-10, 0);
+        }];
+    }
 }
 
 /// 隐藏快进视图
 - (void)hideFastView {
-    self.fastView.hidden = YES;
+    [UIView animateWithDuration:0.4 animations:^{
+        self.fastView.transform = CGAffineTransformIdentity;
+        self.fastView.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.fastView.hidden = YES;
+    }];
 }
 
 /// 加载失败

@@ -249,7 +249,8 @@
 }
 
 - (BOOL)shouldResponseGestureWithPoint:(CGPoint)point withGestureType:(ZFPlayerGestureType)type touch:(nonnull UITouch *)touch {
-    if (point.y > self.bottomToolView.y || [touch.view isKindOfClass:[UIButton class]]) {
+    CGRect sliderRect = [self.bottomToolView convertRect:self.slider.frame toView:self];
+    if (CGRectContainsPoint(sliderRect, point)) {
         return NO;
     }
     if (self.player.isLockedScreen && type != ZFPlayerGestureTypeSingleTap) { // 锁定屏幕方向后只相应tap手势
@@ -373,7 +374,6 @@
         _currentTimeLabel.textColor = [UIColor whiteColor];
         _currentTimeLabel.font = [UIFont systemFontOfSize:14.0f];
         _currentTimeLabel.textAlignment = NSTextAlignmentCenter;
-        _currentTimeLabel.text = @"00:00";
     }
     return _currentTimeLabel;
 }
@@ -397,7 +397,6 @@
         _totalTimeLabel.textColor = [UIColor whiteColor];
         _totalTimeLabel.font = [UIFont systemFontOfSize:14.0f];
         _totalTimeLabel.textAlignment = NSTextAlignmentCenter;
-        _totalTimeLabel.text = @"00:00";
     }
     return _totalTimeLabel;
 }
