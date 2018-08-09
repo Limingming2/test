@@ -16,7 +16,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-AMDaliy/Pods/IJKMediaFramework/IJKMediaFramework/Classes/IJKMediaFramework.framework/IJKMediaFramework
+
 ## Other
 *.moved-aside
 *.xcuserstate
@@ -58,3 +58,4 @@ fastlane/screenshots
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+AMDaliy/Pods/IJKMediaFramework/IJKMediaFramework/Classes/IJKMediaFramework.framework
