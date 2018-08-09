@@ -373,7 +373,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u4B-CK-8QE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
+                                                    <rect key="frame" x="0.0" y="10" width="375" height="167.5"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqC-hi-GcU">
                                                     <rect key="frame" x="319" y="187.5" width="46" height="20"/>
@@ -388,7 +388,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="AqC-hi-GcU" secondAttribute="bottom" constant="10" id="9eE-Fo-ggi"/>
                                                 <constraint firstItem="AqC-hi-GcU" firstAttribute="top" secondItem="u4B-CK-8QE" secondAttribute="bottom" constant="10" id="I7U-pB-tBa"/>
                                                 <constraint firstAttribute="bottom" secondItem="u4B-CK-8QE" secondAttribute="bottom" constant="40" id="OKA-cl-Q8R"/>
-                                                <constraint firstItem="u4B-CK-8QE" firstAttribute="top" secondItem="Wbz-3H-iBO" secondAttribute="top" id="WNm-2i-gB3"/>
+                                                <constraint firstItem="u4B-CK-8QE" firstAttribute="top" secondItem="Wbz-3H-iBO" secondAttribute="top" constant="10" id="WNm-2i-gB3"/>
                                                 <constraint firstItem="u4B-CK-8QE" firstAttribute="leading" secondItem="Wbz-3H-iBO" secondAttribute="leading" id="adm-dw-OWM"/>
                                                 <constraint firstAttribute="trailing" secondItem="u4B-CK-8QE" secondAttribute="trailing" id="jop-4W-NAJ"/>
                                             </constraints>
