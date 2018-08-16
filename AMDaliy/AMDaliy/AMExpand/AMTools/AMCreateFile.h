@@ -13,7 +13,7 @@
 typedef enum : NSUInteger {
     AMDocument = NSDocumentDirectory,
     AMLibrary = NSLibraryDirectory,
-    AMTemp = nstmpdirec,
+    AMTemp = NSCachesDirectory,
 } AMSandbox;
 
 

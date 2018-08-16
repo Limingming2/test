@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C145AFB2125DDA700DF7BAA /* AMVideoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C145AFA2125DDA700DF7BAA /* AMVideoScene.m */; };
+		6C145AFE2125DE4700DF7BAA /* AMDownloadScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C145AFD2125DE4700DF7BAA /* AMDownloadScene.m */; };
+		6C145B012125DE7800DF7BAA /* AMPlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C145B002125DE7800DF7BAA /* AMPlayScene.m */; };
 		6C3EDCA72114069B002DC635 /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDC7A2114069A002DC635 /* NSBundle+TZImagePicker.m */; };
 		6C3EDCA82114069B002DC635 /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDC7C2114069A002DC635 /* TZAssetCell.m */; };
 		6C3EDCA92114069B002DC635 /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDC7E2114069A002DC635 /* TZAssetModel.m */; };
@@ -44,6 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C145AF92125DDA700DF7BAA /* AMVideoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMVideoScene.h; sourceTree = "<group>"; };
+		6C145AFA2125DDA700DF7BAA /* AMVideoScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMVideoScene.m; sourceTree = "<group>"; };
+		6C145AFC2125DE4700DF7BAA /* AMDownloadScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMDownloadScene.h; sourceTree = "<group>"; };
+		6C145AFD2125DE4700DF7BAA /* AMDownloadScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMDownloadScene.m; sourceTree = "<group>"; };
+		6C145AFF2125DE7800DF7BAA /* AMPlayScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMPlayScene.h; sourceTree = "<group>"; };
+		6C145B002125DE7800DF7BAA /* AMPlayScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMPlayScene.m; sourceTree = "<group>"; };
 		6C3EDC792114069A002DC635 /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
 		6C3EDC7A2114069A002DC635 /* NSBundle+TZImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+TZImagePicker.m"; sourceTree = "<group>"; };
 		6C3EDC7B2114069A002DC635 /* TZAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetCell.h; sourceTree = "<group>"; };
@@ -134,6 +143,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6C145AF82125DD8100DF7BAA /* AMVideo */ = {
+			isa = PBXGroup;
+			children = (
+				6C145AF92125DDA700DF7BAA /* AMVideoScene.h */,
+				6C145AFA2125DDA700DF7BAA /* AMVideoScene.m */,
+				6C145AFC2125DE4700DF7BAA /* AMDownloadScene.h */,
+				6C145AFD2125DE4700DF7BAA /* AMDownloadScene.m */,
+				6C145AFF2125DE7800DF7BAA /* AMPlayScene.h */,
+				6C145B002125DE7800DF7BAA /* AMPlayScene.m */,
+			);
+			path = AMVideo;
+			sourceTree = "<group>";
+		};
 		6C3EDC772114069A002DC635 /* AMExpand */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +207,7 @@
 		6C3EDC962114069B002DC635 /* AMModules */ = {
 			isa = PBXGroup;
 			children = (
+				6C145AF82125DD8100DF7BAA /* AMVideo */,
 				6C3EDCBC2114503B002DC635 /* AMPlayerList */,
 				6C3EDC972114069B002DC635 /* AMEnableBtn */,
 				6C3EDC9A2114069B002DC635 /* AMFMDB */,
@@ -346,6 +369,7 @@
 				BAB2446D2043DE1F00C05E75 /* Frameworks */,
 				BAB2446E2043DE1F00C05E75 /* Resources */,
 				FACB24C64B672EBF3A18216E /* [CP] Copy Pods Resources */,
+				789BAF9303D832B57DBE173C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,6 +447,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		789BAF9303D832B57DBE173C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AMDaliy/Pods-AMDaliy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FACB24C64B672EBF3A18216E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,7 +473,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -462,8 +501,10 @@
 				BAB244782043DE1F00C05E75 /* ViewController.m in Sources */,
 				6C3EDCAC2114069B002DC635 /* TZImageManager.m in Sources */,
 				BAB244832043DE1F00C05E75 /* main.m in Sources */,
+				6C145AFB2125DDA700DF7BAA /* AMVideoScene.m in Sources */,
 				6C3EDCB52114069B002DC635 /* UIView+Layout.m in Sources */,
 				6C3EDCD421184A3F002DC635 /* AMVideoModel.m in Sources */,
+				6C145AFE2125DE4700DF7BAA /* AMDownloadScene.m in Sources */,
 				6C3EDCB02114069B002DC635 /* TZPhotoPickerController.m in Sources */,
 				6C3EDCAA2114069B002DC635 /* TZGifPhotoPreviewController.m in Sources */,
 				6C3EDCB42114069B002DC635 /* TZVideoPlayerController.m in Sources */,
@@ -472,6 +513,7 @@
 				6C3EDCB72114069B002DC635 /* AMFMDB.m in Sources */,
 				6C76C8A0211C449500395ADC /* AMCreateFile.m in Sources */,
 				6C3EDCBF2114506E002DC635 /* AMPlayerListScene.m in Sources */,
+				6C145B012125DE7800DF7BAA /* AMPlayScene.m in Sources */,
 				6C3EDCB62114069B002DC635 /* AMLoginScene.m in Sources */,
 				6C3EDCAB2114069B002DC635 /* TZImageCropManager.m in Sources */,
 				6C3EDCAE2114069B002DC635 /* TZImagePickerController.m in Sources */,

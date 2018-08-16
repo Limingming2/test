@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7v-kk-GDp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7v-kk-GDp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -204,7 +204,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="c7L-BS-eHC" kind="show" id="UpU-KH-IIz"/>
+                                            <segue destination="XPR-WO-d0Y" kind="show" trigger="accessoryAction" id="Md1-bN-LGi"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -419,7 +419,147 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWQ-he-sB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.8" y="1165.3673163418291"/>
+            <point key="canvasLocation" x="303" y="1326"/>
+        </scene>
+        <!--视频-->
+        <scene sceneID="X1h-af-Yg1">
+            <objects>
+                <viewController id="XPR-WO-d0Y" customClass="AMVideoScene" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MRX-SG-3sM"/>
+                        <viewControllerLayoutGuide type="bottom" id="A3R-ZA-7ns"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="15y-zz-Z9O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-hb-N6c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vyh-Ws-tDF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vyh-Ws-tDF" id="o9n-dS-t9E">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zaJ-hb-N6c" firstAttribute="leading" secondItem="15y-zz-Z9O" secondAttribute="leading" id="TNf-NG-uCA"/>
+                            <constraint firstAttribute="trailing" secondItem="zaJ-hb-N6c" secondAttribute="trailing" id="eJW-rQ-RV1"/>
+                            <constraint firstItem="zaJ-hb-N6c" firstAttribute="top" secondItem="15y-zz-Z9O" secondAttribute="top" id="fl0-n3-VYm"/>
+                            <constraint firstItem="A3R-ZA-7ns" firstAttribute="top" secondItem="zaJ-hb-N6c" secondAttribute="bottom" id="w2i-ps-K91"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="视频" id="Pmc-QM-6AI">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ql6-ZE-sfE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ic9-MO-Aoy">
+                                <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="下载"/>
+                                <connections>
+                                    <action selector="goDownload:" destination="XPR-WO-d0Y" eventType="touchUpInside" id="MgV-uw-pOk"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="ieD-7j-IBj" kind="show" id="stQ-rf-Qox"/>
+                        <segue destination="00t-rq-ha9" kind="show" identifier="video2download" id="EiJ-Oo-713"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2K-nr-ii7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133" y="1170"/>
+        </scene>
+        <!--视频-->
+        <scene sceneID="TES-3W-qCU">
+            <objects>
+                <viewController storyboardIdentifier="AMPlayScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ieD-7j-IBj" customClass="AMPlayScene" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1hK-zo-OY2"/>
+                        <viewControllerLayoutGuide type="bottom" id="FkY-2P-JEs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qHV-65-aJT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="视频" id="Fh9-yc-n6y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sq4-j2-6mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2054" y="503"/>
+        </scene>
+        <!--下载-->
+        <scene sceneID="6cQ-F7-Ptx">
+            <objects>
+                <viewController storyboardIdentifier="AMDownloadScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="00t-rq-ha9" customClass="AMDownloadScene" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hRL-b8-3jv"/>
+                        <viewControllerLayoutGuide type="bottom" id="jVF-D1-dQm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cpg-WJ-Dkn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lb7-w9-9uA">
+                                <rect key="frame" x="15" y="84" width="345" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ebT-t4-l7N"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xr-Ob-xha">
+                                <rect key="frame" x="15" y="149" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="V6f-Ej-rWs"/>
+                                    <constraint firstAttribute="width" constant="46" id="bnt-dB-K4F"/>
+                                </constraints>
+                                <state key="normal" title="下载"/>
+                                <connections>
+                                    <action selector="downloadAction:" destination="00t-rq-ha9" eventType="touchUpInside" id="O9C-z5-Yjm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyW-vA-PsH">
+                                <rect key="frame" x="318" y="149" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="367-ky-T9o"/>
+                                    <constraint firstAttribute="width" constant="42" id="fAi-c6-CaH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FyW-vA-PsH" secondAttribute="trailing" constant="15" id="2Iy-6A-GbY"/>
+                            <constraint firstAttribute="trailing" secondItem="lb7-w9-9uA" secondAttribute="trailing" constant="15" id="47s-j0-0tt"/>
+                            <constraint firstItem="lb7-w9-9uA" firstAttribute="leading" secondItem="Cpg-WJ-Dkn" secondAttribute="leading" constant="15" id="As8-3p-CoR"/>
+                            <constraint firstItem="lb7-w9-9uA" firstAttribute="top" secondItem="hRL-b8-3jv" secondAttribute="bottom" constant="20" id="Twa-qf-r60"/>
+                            <constraint firstItem="1Xr-Ob-xha" firstAttribute="top" secondItem="lb7-w9-9uA" secondAttribute="bottom" constant="15" id="Z2X-fZ-Bor"/>
+                            <constraint firstItem="FyW-vA-PsH" firstAttribute="top" secondItem="lb7-w9-9uA" secondAttribute="bottom" constant="15" id="ibO-DN-7EZ"/>
+                            <constraint firstItem="1Xr-Ob-xha" firstAttribute="leading" secondItem="Cpg-WJ-Dkn" secondAttribute="leading" constant="15" id="tvI-dw-0kd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="下载" id="R3F-Ht-hYa"/>
+                    <connections>
+                        <outlet property="downloadBtn" destination="1Xr-Ob-xha" id="MxU-q0-UFd"/>
+                        <outlet property="progressLab" destination="FyW-vA-PsH" id="CnV-fn-SrY"/>
+                        <outlet property="urlTF" destination="lb7-w9-9uA" id="a7e-sr-Myz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t98-gg-gda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2054" y="1182"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="icW-kt-KDO">

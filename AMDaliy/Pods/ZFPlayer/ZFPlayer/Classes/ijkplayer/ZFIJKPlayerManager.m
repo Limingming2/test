@@ -51,8 +51,8 @@
 @synthesize loadState                      = _loadState;
 @synthesize assetURL                       = _assetURL;
 @synthesize playerPrepareToPlay            = _playerPrepareToPlay;
-@synthesize playerPlayStatChanged          = _playerPlayStatChanged;
-@synthesize playerLoadStatChanged          = _playerLoadStatChanged;
+@synthesize playerPlayStateChanged         = _playerPlayStateChanged;
+@synthesize playerLoadStateChanged         = _playerLoadStateChanged;
 @synthesize seekTime                       = _seekTime;
 @synthesize muted                          = _muted;
 @synthesize volume                         = _volume;
@@ -156,14 +156,6 @@
     self.scalingMode = _scalingMode;
     
     [self addPlayerNotificationObservers];
-    
-#ifdef DEBUG
-    [IJKFFMoviePlayerController setLogReport:YES];
-    [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_DEBUG];
-#else
-    [IJKFFMoviePlayerController setLogReport:NO];
-    [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_INFO];
-#endif
 }
 
 - (void)addPlayerNotificationObservers {
@@ -366,12 +358,12 @@
 
 - (void)setPlayState:(ZFPlayerPlaybackState)playState {
     _playState = playState;
-    if (self.playerPlayStatChanged) self.playerPlayStatChanged(self, playState);
+    if (self.playerPlayStateChanged) self.playerPlayStateChanged(self, playState);
 }
 
 - (void)setLoadState:(ZFPlayerLoadState)loadState {
     _loadState = loadState;
-    if (self.playerLoadStatChanged) self.playerLoadStatChanged(self, loadState);
+    if (self.playerLoadStateChanged) self.playerLoadStateChanged(self, loadState);
 }
 
 - (void)setAssetURL:(NSURL *)assetURL {

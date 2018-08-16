@@ -96,6 +96,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
 @property (nonatomic, strong, readonly) AVPlayerItem *playerItem;
 @property (nonatomic, strong, readonly) AVPlayer *player;
 @property (nonatomic, strong) AVPlayerLayer *playerLayer;
+@property (nonatomic, assign) BOOL isBuffering;
 
 @end
 
@@ -112,8 +113,8 @@ static NSString *const kPresentationSize         = @"presentationSize";
 @synthesize loadState                      = _loadState;
 @synthesize assetURL                       = _assetURL;
 @synthesize playerPrepareToPlay            = _playerPrepareToPlay;
-@synthesize playerPlayStatChanged          = _playerPlayStatChanged;
-@synthesize playerLoadStatChanged          = _playerLoadStatChanged;
+@synthesize playerPlayStateChanged         = _playerPlayStateChanged;
+@synthesize playerLoadStateChanged         = _playerLoadStateChanged;
 @synthesize seekTime                       = _seekTime;
 @synthesize muted                          = _muted;
 @synthesize volume                         = _volume;
@@ -193,9 +194,9 @@ static NSString *const kPresentationSize         = @"presentationSize";
 }
 
 - (void)seekToTime:(NSTimeInterval)time completionHandler:(void (^ __nullable)(BOOL finished))completionHandler {
-    CMTime seekTime = CMTimeMake(time, 1); //kCMTimeZero
+    CMTime seekTime = CMTimeMake(time, 1);
     [_playerItem cancelPendingSeeks];
-    [_player seekToTime:seekTime toleranceBefore:CMTimeMake(1,1) toleranceAfter:CMTimeMake(1,1) completionHandler:completionHandler];
+    [_player seekToTime:seekTime toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:completionHandler];
 }
 
 - (UIImage *)thumbnailImageAtCurrentTime {
@@ -276,22 +277,21 @@ static NSString *const kPresentationSize         = @"presentationSize";
  */
 - (void)bufferingSomeSecond {
     // playbackBufferEmpty会反复进入，因此在bufferingOneSecond延时播放执行完之前再调用bufferingSomeSecond都忽略
-    __block BOOL isBuffering = NO;
-    if (isBuffering) return;
-    isBuffering = YES;
+    if (self.isBuffering) return;
+    self.isBuffering = YES;
     
     // 需要先暂停一小会之后再播放，否则网络状况不好的时候时间在走，声音播放不出来
     [self.player pause];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 如果此时用户已经暂停了，则不再需要开启播放了
         if (!self.isPlaying) {
-            isBuffering = NO;
+            self.isBuffering = NO;
             return;
         }
         [self play];
         // 如果执行了play还是没有播放则说明还没有缓存好，则再次缓存一段时间
-        isBuffering = NO;
-        if (!self.playerItem.isPlaybackLikelyToKeepUp) { [self bufferingSomeSecond]; }
+        self.isBuffering = NO;
+        if (!self.playerItem.isPlaybackLikelyToKeepUp) [self bufferingSomeSecond];
     });
 }
 
@@ -325,7 +325,6 @@ static NSString *const kPresentationSize         = @"presentationSize";
         @strongify(self)
         if (!self) return;
         NSArray *loadedRanges = self.playerItem.seekableTimeRanges;
-        NSLog(@"%f",CMTimeGetSeconds(time));
         if (loadedRanges.count > 0) {
             if (self.playerPlayTimeChanged) self.playerPlayTimeChanged(self, self.currentTime, self.totalTime);
         }
@@ -419,12 +418,12 @@ static NSString *const kPresentationSize         = @"presentationSize";
 
 - (void)setPlayState:(ZFPlayerPlaybackState)playState {
     _playState = playState;
-    if (self.playerPlayStatChanged) self.playerPlayStatChanged(self, playState);
+    if (self.playerPlayStateChanged) self.playerPlayStateChanged(self, playState);
 }
 
 - (void)setLoadState:(ZFPlayerLoadState)loadState {
     _loadState = loadState;
-    if (self.playerLoadStatChanged) self.playerLoadStatChanged(self, loadState);
+    if (self.playerLoadStateChanged) self.playerLoadStateChanged(self, loadState);
 }
 
 - (void)setAssetURL:(NSURL *)assetURL {

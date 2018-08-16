@@ -36,6 +36,7 @@
     }
     
     [self makePlayer];
+    
 }
 
 - (void)makePlayer
@@ -56,9 +57,27 @@
 //            [self.player stopCurrentPlayingCell];
 //        }
 //    };
+    [self playTheNext:[NSIndexPath indexPathForRow:0 inSection:0]];
+    @weakify(self);
+    [self.player setPlayerDidToEnd:^(id<ZFPlayerMediaPlayback>  _Nonnull asset) {
+        @strongify(self);
+//        NSIndexPath *indexPath =
+        if (self.player.playingIndexPath.row < self.arr.count - 1) {
+            [self playTheNext:[NSIndexPath indexPathForRow:self.player.playingIndexPath.row + 1 inSection:self.player.playingIndexPath.section]];
+        }
+    }];
+}
+
+
+- (void)playTheNext:(NSIndexPath *)indexPath
+{
     
+    [self.player playTheIndexPath:indexPath scrollToTop:YES completionHandler:^{
+        
+
+        
+    }];
     
-    [self.player playTheIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] scrollToTop:YES];
 }
 
 - (BOOL)shouldAutorotate
