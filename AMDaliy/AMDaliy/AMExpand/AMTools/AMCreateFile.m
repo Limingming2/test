@@ -68,7 +68,15 @@ static AMCreateFile *_fileControl;
     
 }
 
++ (NSFileManager *)filemanager
+{
+    return [NSFileManager defaultManager];
+}
 
++ (BOOL)fileExist:(NSString *)path
+{
+    return [self.filemanager fileExistsAtPath:path];
+}
 
 
 

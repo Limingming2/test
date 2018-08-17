@@ -31,4 +31,6 @@ typedef enum : NSUInteger {
  */
 + (NSString *)createFileWithPath:(NSString *)path isDir:(BOOL)dir withType:(AMSandbox)fileType;
 
++ (BOOL)fileExist:(NSString *)path;
+
 @end

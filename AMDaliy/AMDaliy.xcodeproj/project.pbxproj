@@ -104,6 +104,7 @@
 		6C3EDCCD211841B1002DC635 /* UIImageView+AMImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AMImageView.m"; sourceTree = "<group>"; };
 		6C3EDCD221184A3F002DC635 /* AMVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMVideoModel.h; sourceTree = "<group>"; };
 		6C3EDCD321184A3F002DC635 /* AMVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMVideoModel.m; sourceTree = "<group>"; };
+		6C5F127D2126D22A0031031D /* AMIdenfier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMIdenfier.h; sourceTree = "<group>"; };
 		6C76C89E211C449500395ADC /* AMCreateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMCreateFile.m; sourceTree = "<group>"; };
 		6C76C89F211C449500395ADC /* AMCreateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMCreateFile.h; sourceTree = "<group>"; };
 		6C76C8A1211C44A100395ADC /* AMHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMHeader.pch; sourceTree = "<group>"; };
@@ -291,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				6C76C8A1211C44A100395ADC /* AMHeader.pch */,
+				6C5F127D2126D22A0031031D /* AMIdenfier.h */,
 			);
 			path = AMMacro;
 			sourceTree = "<group>";

@@ -8,8 +8,8 @@
 
 #import "AMVideoScene.h"
 
-@interface AMVideoScene ()
-
+@interface AMVideoScene ()<UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @end
 
 @implementation AMVideoScene
@@ -19,9 +19,22 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+#pragma mark -
+
+
+- (void)updateDatasouce
+{
+    [[NSFileManager defaultManager] ]
 }
 
 - (IBAction)goDownload:(id)sender

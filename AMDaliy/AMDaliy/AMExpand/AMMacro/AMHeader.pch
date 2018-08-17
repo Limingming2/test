@@ -12,9 +12,13 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#import "AMIdenfier.h"
+
 #define kScreenWidth 375
 
 #define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
 #define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+
+#import "AMCreateFile.h"
 
 #endif /* AMHeader_pch */
