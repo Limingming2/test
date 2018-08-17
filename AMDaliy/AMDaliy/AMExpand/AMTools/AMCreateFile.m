@@ -25,12 +25,66 @@ static AMCreateFile *_fileControl;
     return self;
 }
 
-+ (void)createFileWithPath:(NSString *)path withType:(AMSandbox)fileType
++ (NSString *)createFileWithPath:(NSString *)path isDir:(BOOL)dir withType:(AMSandbox)fileType
 {
     NSFileManager *filemanager = [NSFileManager defaultManager];
-    
-//    NSString *path = [NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory directory, NSUserDomainMask, YES)]
+    NSSearchPathDirectory type = (NSSearchPathDirectory)fileType;
+    NSString *currentPath = [NSSearchPathForDirectoriesInDomains(type, NSUserDomainMask, YES) lastObject];
+    NSString *resultPath = [currentPath stringByAppendingPathComponent:path];
+    BOOL isdir;
+    BOOL isfile = [filemanager fileExistsAtPath:resultPath isDirectory:&isdir];
+    BOOL success = YES;
+    NSError *error;
+    if (dir) {
+        if (!isdir)
+        {
+            success = [filemanager createDirectoryAtPath:resultPath
+                             withIntermediateDirectories:YES
+                                              attributes:nil
+                                                   error:&error];
+        }else
+        {
+        }
+    }else {
+        if (!isfile)
+        {
+            NSString *tmp = [resultPath stringByDeletingLastPathComponent];
+            isfile = [filemanager fileExistsAtPath:tmp isDirectory:&isdir];
+            if (!isdir) {
+                [filemanager createDirectoryAtPath:tmp withIntermediateDirectories:YES attributes:nil error:&error];
+            }
+            success = [filemanager createFileAtPath:resultPath
+                                           contents:nil
+                                         attributes:nil];
+        }else
+        {
+        }
+    }
+    if (!success) {
+        resultPath = @"";
+        NSLog(@"创建失败：%@", error);
+    }
+    return resultPath;
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
