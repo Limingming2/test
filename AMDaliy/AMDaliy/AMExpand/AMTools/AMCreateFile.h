@@ -9,11 +9,13 @@
 
 
 #import <Foundation/Foundation.h>
+#import <Foundation/NSString.h>
+#import <Foundation/NSArray.h>
 
 typedef enum : NSUInteger {
     AMDocument = NSDocumentDirectory,
     AMLibrary = NSLibraryDirectory,
-    AMTemp = nstmpdirec,
+    AMTemp = NSCachesDirectory
 } AMSandbox;
 
 
@@ -23,8 +25,10 @@ typedef enum : NSUInteger {
  创建文件/目录
 
  @param path 目录
+ @param dir 是否是目录
  @param fileType 存储位置
+ @return 返回路径
  */
-+ (void)createFileWithPath:(NSString *)path withType:(AMSandbox)fileType;
++ (NSString *)createFileWithPath:(NSString *)path isDir:(BOOL)dir withType:(AMSandbox)fileType;
 
 @end

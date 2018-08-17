@@ -10,6 +10,7 @@
 #import <AVFoundation/AVAsset.h>
 #import <AVFoundation/AVAssetImageGenerator.h>
 #import <AVFoundation/AVTime.h>
+#import "AMCreateFile.h"
 
 
 @implementation UIImageView (AMImageView)
@@ -30,7 +31,23 @@
             self.image = videoImage;
             // 保存到
         });
+        NSString *fileName = [@"lmm/img/" stringByAppendingString:[[videoPath stringByDeletingPathExtension] lastPathComponent]];
+        fileName = [NSString stringWithFormat:@"%@.png", fileName];
+        NSString *imgPath = [AMCreateFile createFileWithPath:fileName isDir:NO withType:AMDocument];
+        NSData *data = UIImagePNGRepresentation(videoImage);
+        BOOL iswirtten = [data writeToFile:imgPath atomically:YES];
+        NSLog(@"iswirtten:%d", iswirtten);
         CGImageRelease(image);
     });
 }
+
+
+
+
+
+
+
+
+
+
 @end
