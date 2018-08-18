@@ -7,6 +7,7 @@
 //
 
 #import "AMVideoCell.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface AMVideoCell()
 
@@ -30,7 +31,11 @@
 
 - (void)loadInfo:(NSString *)info
 {
-    self.titleLab.text = info;
+    NSArray *arr = [[NSUserDefaults standardUserDefaults] objectForKey:info.lastPathComponent];
+    NSString *title = arr.lastObject;
+    NSString *imgStr = arr.firstObject;
+    self.titleLab.text = title;
+    [self.imgView setImageWithURL:[NSURL URLWithString:imgStr]];
 }
 
 @end

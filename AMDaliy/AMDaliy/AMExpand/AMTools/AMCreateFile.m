@@ -66,7 +66,6 @@ static NSFileManager *_filemanager;
         NSLog(@"创建失败：%@", error);
     }
     return resultPath;
-    
 }
 
 + (NSFileManager *)filemanager
@@ -95,7 +94,10 @@ static NSFileManager *_filemanager;
     return resultArr;
 }
 
-
++ (void)deleteFileWith:(NSString *)path
+{
+    [[self filemanager] removeItemAtPath:path error:nil];
+}
 
 
 

@@ -8,6 +8,7 @@
 
 #import "AMDownloadScene.h"
 #import <AFNetworking/AFNetworking.h>
+#import "AMRequestManager.h"
 
 @interface AMDownloadScene ()
 @property (nonatomic, weak) IBOutlet UIButton *downloadBtn;
@@ -27,6 +28,12 @@
     
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
+// 点击下载，整理下载链接
 - (IBAction)downloadAction:(id)sender
 {
     NSString *urlStr;
@@ -36,37 +43,31 @@
         urlStr = @"https://record-manual.cctalk.com/5f849fe7871b9e8284c4db9b602798c0.mp4?sign=1bb4ff45337ae6c0e0983e22b45333eb&t=5b780d4c";
         [HToastView toast:@"请输入地址，现在是默认视频地址"];
     }
-    [self downActionWithPath:urlStr];
+    [AMRequestManager sendRequest:urlStr success:^(NSDictionary *dic) {
+        [self downActionWithPath:dic];
+    } fail:^(NSError *error) {
+        NSLog(@"error:%@", error);
+        [HToastView toast:error.userInfo[NSLocalizedDescriptionKey]];
+    }];
 }
 
-- (void)downActionWithPath:(NSString *)str
+// 执行下载
+- (void)downActionWithPath:(NSDictionary *)result
 {
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:config];
-    sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    NSURL *url = [NSURL URLWithString:str];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    NSString *path = [AMCreateFile createFileWithPath:kVideoPath isDir:YES withType:AMDocument];
-    NSString *filePath = [path stringByAppendingPathComponent:url.lastPathComponent];
-    if ([AMCreateFile fileExist:filePath]) {
-        return;
-    }
-    NSURLSessionDownloadTask *task = [sessionManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            CGFloat progress = (CGFloat)downloadProgress.completedUnitCount / (CGFloat)downloadProgress.totalUnitCount;
-            self.progressLab.text = [NSString stringWithFormat:@"%.2f%%", progress * 100];
-        });
-    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-        return [NSURL fileURLWithPath:filePath];
-    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-        NSLog(@"%@", error);
-        if (!error) {
-            [HToastView toast:@"下载成功!"];
-        }else {
-            [HToastView toast:[NSString stringWithFormat:@"错误信息：%@", error.userInfo[NSLocalizedDescriptionKey]]];
-        }
+    NSString *str = result[kVideoUrlKey];
+    [AMRequestManager downloadVideo:str progress:^(CGFloat progress) {
+        self.progressLab.text = [NSString stringWithFormat:@"%.2f%%", progress];
+    } success:^(NSDictionary *dic) {
+        [HToastView toast:dic[kMessageKey]];
+        [self saveInfo:@[result[kCoverUrlKey], result[kVideoNameKey]] withKey:str];
+    } fail:^(NSError *error) {
+        [HToastView toast:[NSString stringWithFormat:@"错误信息：%@", error.userInfo[NSLocalizedDescriptionKey]]];
     }];
-    [task resume];
+}
+
+- (void)saveInfo:(NSArray *)info withKey:(NSString *)key
+{
+    [[NSUserDefaults standardUserDefaults] setObject:info forKey:[NSURL URLWithString:key].lastPathComponent];
 }
 
 

@@ -14,7 +14,13 @@
 
 static NSString *const kVideoCellStr = @"videocellstr";
 static NSString *const kVideoPath = @"lmm/video";
-static NSString *const kVideoList2video =@"videolist2video";
-
-
+static NSString *const kVideoList2video = @"videolist2video";
+static NSString *const kVideoList2download = @"video2download";
+static NSString *const kMessageKey = @"message";
+static NSString *const kStatusKey = @"status";
+static NSString *const kDataKey = @"data";
+static NSString *const kVideoUrlKey = @"videoUrl";
+static NSString *const kCoverUrlKey = @"coverUrl";
+static NSString *const kVideoNameKey = @"videoName";
+static NSInteger const kSuccessCode = 200;
 #endif /* AMIdenfier_h */

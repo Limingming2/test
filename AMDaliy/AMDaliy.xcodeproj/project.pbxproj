@@ -40,6 +40,7 @@
 		6C7BA7C32127EC8200ED862C /* AMVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C22127EC8200ED862C /* AMVideoCell.m */; };
 		6C7BA7C921280F3700ED862C /* HToastLab.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C621280F3700ED862C /* HToastLab.m */; };
 		6C7BA7CA21280F3700ED862C /* HToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C821280F3700ED862C /* HToastView.m */; };
+		6C7BA7CE21282CC700ED862C /* AMRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7CD21282CC700ED862C /* AMRequestManager.m */; };
 		7E93D2AEDCFE590B052ED55D /* libPods-AMDaliy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C148C6E3686C676879327F1A /* libPods-AMDaliy.a */; };
 		BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244742043DE1F00C05E75 /* AppDelegate.m */; };
 		BAB244782043DE1F00C05E75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244772043DE1F00C05E75 /* ViewController.m */; };
@@ -117,6 +118,8 @@
 		6C7BA7C621280F3700ED862C /* HToastLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HToastLab.m; sourceTree = "<group>"; };
 		6C7BA7C721280F3700ED862C /* HToastLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HToastLab.h; sourceTree = "<group>"; };
 		6C7BA7C821280F3700ED862C /* HToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HToastView.m; sourceTree = "<group>"; };
+		6C7BA7CC21282CC700ED862C /* AMRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMRequestManager.h; sourceTree = "<group>"; };
+		6C7BA7CD21282CC700ED862C /* AMRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMRequestManager.m; sourceTree = "<group>"; };
 		BAB244702043DE1F00C05E75 /* AMDaliy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMDaliy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB244732043DE1F00C05E75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAB244742043DE1F00C05E75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -346,6 +349,15 @@
 			path = HToast;
 			sourceTree = "<group>";
 		};
+		6C7BA7CB21282C7E00ED862C /* AMRequest */ = {
+			isa = PBXGroup;
+			children = (
+				6C7BA7CC21282CC700ED862C /* AMRequestManager.h */,
+				6C7BA7CD21282CC700ED862C /* AMRequestManager.m */,
+			);
+			path = AMRequest;
+			sourceTree = "<group>";
+		};
 		BAB244672043DE1F00C05E75 = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +381,7 @@
 			children = (
 				BAB244732043DE1F00C05E75 /* AppDelegate.h */,
 				BAB244742043DE1F00C05E75 /* AppDelegate.m */,
+				6C7BA7CB21282C7E00ED862C /* AMRequest */,
 				6C3EDC772114069A002DC635 /* AMExpand */,
 				6C3EDC962114069B002DC635 /* AMModules */,
 				BAB244762043DE1F00C05E75 /* ViewController.h */,
@@ -539,6 +552,7 @@
 				6C145AFB2125DDA700DF7BAA /* AMVideoScene.m in Sources */,
 				6C7BA7C921280F3700ED862C /* HToastLab.m in Sources */,
 				6C3EDCB52114069B002DC635 /* UIView+Layout.m in Sources */,
+				6C7BA7CE21282CC700ED862C /* AMRequestManager.m in Sources */,
 				6C3EDCD421184A3F002DC635 /* AMVideoModel.m in Sources */,
 				6C145AFE2125DE4700DF7BAA /* AMDownloadScene.m in Sources */,
 				6C3EDCB02114069B002DC635 /* TZPhotoPickerController.m in Sources */,
@@ -695,6 +709,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP2XYJWA4E;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AMDaliy/AMExpand/AMMacro/AMHeader.pch";
 				INFOPLIST_FILE = AMDaliy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -712,6 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP2XYJWA4E;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AMDaliy/AMExpand/AMMacro/AMHeader.pch";
 				INFOPLIST_FILE = AMDaliy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -39,6 +39,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AMVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:kVideoCellStr];
+    [cell loadInfo:self.videos[indexPath.row]];
+    
     return cell;
 }
 
@@ -49,7 +51,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 233;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -57,6 +59,47 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:kVideoList2video sender:self.videos[indexPath.row]];
 }
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(11.0)
+{
+    UIContextualAction * action = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"这就是\n个摆设" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        completionHandler(YES);
+        }];
+    UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[action]];
+    return config;
+}
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(11.0)
+{
+    UIContextualAction *action = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"这样删" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        completionHandler(YES);
+        [self removeVideoAtIndexPath:indexPath];
+    }];
+    UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[action]];
+    return config;
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除这个" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        
+    }];
+    return @[action];
+}
+
 
 #pragma mark - private methods
 
@@ -67,12 +110,19 @@
     
 }
 
+- (void)removeVideoAtIndexPath:(NSIndexPath *)indexPath
+{
+//    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    [AMCreateFile deleteFileWith:self.videos[indexPath.row]];
+    
+}
+
 
 #pragma mark - user actions
 
 - (IBAction)goDownload:(id)sender
 {
-    [self performSegueWithIdentifier:@"video2download" sender:nil];
+    [self performSegueWithIdentifier:kVideoList2download sender:nil];
 }
 
 

@@ -49,4 +49,6 @@ typedef enum : NSUInteger {
  */
 + (NSArray *)filesInDir:(NSString *)path withFileType:(AMSandbox)fileType;
 
++ (void)deleteFileWith:(NSString *)path;
+
 @end
