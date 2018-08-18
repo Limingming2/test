@@ -31,6 +31,22 @@ typedef enum : NSUInteger {
  */
 + (NSString *)createFileWithPath:(NSString *)path isDir:(BOOL)dir withType:(AMSandbox)fileType;
 
+
+/**
+ 判断文件是否存在
+
+ @param path 文件路径
+ @return 是否存在
+ */
 + (BOOL)fileExist:(NSString *)path;
+
+
+/**
+ 获取文件夹下文件数组
+
+ @param path 文件夹路径
+ @return 返回文件数组
+ */
++ (NSArray *)filesInDir:(NSString *)path withFileType:(AMSandbox)fileType;
 
 @end

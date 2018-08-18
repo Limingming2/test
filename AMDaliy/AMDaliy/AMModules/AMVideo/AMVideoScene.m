@@ -7,9 +7,13 @@
 //
 
 #import "AMVideoScene.h"
+#import "AMVideoCell.h"
+#import "AMPlayScene.h"
 
-@interface AMVideoScene ()<UITableViewDelegate, UITableViewDataSource>
+
+@interface AMVideoScene () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *videos;
 @end
 
 @implementation AMVideoScene
@@ -22,6 +26,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self updateDatasouce];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,27 +34,57 @@
     
 }
 
-#pragma mark -
+#pragma mark - UITableViewDelegate, UITableViewDataSource
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AMVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:kVideoCellStr];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.videos.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:kVideoList2video sender:self.videos[indexPath.row]];
+}
+
+#pragma mark - private methods
 
 - (void)updateDatasouce
 {
-    [[NSFileManager defaultManager] ]
+    self.videos = [AMCreateFile filesInDir:kVideoPath withFileType:AMDocument];
+    [self.tableView reloadData];
+    
 }
+
+
+#pragma mark - user actions
 
 - (IBAction)goDownload:(id)sender
 {
     [self performSegueWithIdentifier:@"video2download" sender:nil];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[AMPlayScene class]]) {
+        AMPlayScene *scene = (AMPlayScene *)segue.destinationViewController;
+        scene.path = sender;
+    }
 }
-*/
+
 
 @end

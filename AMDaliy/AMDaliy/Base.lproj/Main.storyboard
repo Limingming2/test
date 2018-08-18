@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -433,12 +434,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-hb-N6c">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-hb-N6c">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vyh-Ws-tDF">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="videocellstr" id="vyh-Ws-tDF" customClass="AMVideoCell">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vyh-Ws-tDF" id="o9n-dS-t9E">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -446,6 +447,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XPR-WO-d0Y" id="2Hm-vo-b1f"/>
+                                    <outlet property="delegate" destination="XPR-WO-d0Y" id="u8X-sc-aCF"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -469,7 +474,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="ieD-7j-IBj" kind="show" id="stQ-rf-Qox"/>
+                        <outlet property="tableView" destination="zaJ-hb-N6c" id="O9l-Ni-lV5"/>
+                        <segue destination="ieD-7j-IBj" kind="show" identifier="videolist2video" id="stQ-rf-Qox"/>
                         <segue destination="00t-rq-ha9" kind="show" identifier="video2download" id="EiJ-Oo-713"/>
                     </connections>
                 </viewController>
@@ -488,9 +494,25 @@
                     <view key="view" contentMode="scaleToFill" id="qHV-65-aJT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ti-Kz-bWz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7ti-Kz-bWz" secondAttribute="height" multiplier="16:9" id="Kfm-0U-dy6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7ti-Kz-bWz" firstAttribute="top" secondItem="1hK-zo-OY2" secondAttribute="bottom" id="B8K-lN-O3N"/>
+                            <constraint firstItem="7ti-Kz-bWz" firstAttribute="leading" secondItem="qHV-65-aJT" secondAttribute="leading" id="nbr-FD-DkI"/>
+                            <constraint firstAttribute="trailing" secondItem="7ti-Kz-bWz" secondAttribute="trailing" id="vrP-Ah-gsZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="视频" id="Fh9-yc-n6y"/>
+                    <connections>
+                        <outlet property="playerView" destination="7ti-Kz-bWz" id="4b3-px-krc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sq4-j2-6mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

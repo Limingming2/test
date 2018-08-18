@@ -1,5 +1,5 @@
 //
-//  AMPlayScene.h
+//  AMVideoView.h
 //  AMDaliy
 //
 //  Created by 李明明 on 2018/8/17.
@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- 视频播放场景
- */
-@interface AMPlayScene : UIViewController
+@interface AMVideoCell : UITableViewCell
 
-@property (nonatomic, strong) NSString *path;
 
+- (void)loadInfo:(NSString *)info;
 @end

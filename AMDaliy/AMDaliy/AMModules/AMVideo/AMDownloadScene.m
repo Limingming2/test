@@ -29,21 +29,24 @@
 
 - (IBAction)downloadAction:(id)sender
 {
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:config];
-    sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
     NSString *urlStr;
     if (self.urlTF.text.length > 0) {
         urlStr = self.urlTF.text;
     }else {
-        urlStr = @"https://record-manual.cctalk.com/08d9592535b6fb283dd1523e04eb93c3.mp4?sign=efb350fabcc745fab242a90a7eecbb28&t=5b76c636";
+        urlStr = @"https://record-manual.cctalk.com/5f849fe7871b9e8284c4db9b602798c0.mp4?sign=1bb4ff45337ae6c0e0983e22b45333eb&t=5b780d4c";
+        [HToastView toast:@"请输入地址，现在是默认视频地址"];
     }
-    
-    NSURL *url = [NSURL URLWithString:urlStr];
+    [self downActionWithPath:urlStr];
+}
+
+- (void)downActionWithPath:(NSString *)str
+{
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:config];
+    sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    NSURL *url = [NSURL URLWithString:str];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-//    NSString *path = [self checkDir:@"lmm"];
-    NSString *path =  [AMCreateFile createFileWithPath:videoPath isDir:YES withType:AMDocument];
+    NSString *path = [AMCreateFile createFileWithPath:kVideoPath isDir:YES withType:AMDocument];
     NSString *filePath = [path stringByAppendingPathComponent:url.lastPathComponent];
     if ([AMCreateFile fileExist:filePath]) {
         return;
@@ -54,28 +57,18 @@
             self.progressLab.text = [NSString stringWithFormat:@"%.2f%%", progress * 100];
         });
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-        
-        return [NSURL URLWithString:filePath];
+        return [NSURL fileURLWithPath:filePath];
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-        
         NSLog(@"%@", error);
-        
+        if (!error) {
+            [HToastView toast:@"下载成功!"];
+        }else {
+            [HToastView toast:[NSString stringWithFormat:@"错误信息：%@", error.userInfo[NSLocalizedDescriptionKey]]];
+        }
     }];
     [task resume];
 }
 
-- (NSString *)checkDir:(NSString *)dirName
-{
-    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:dirName];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    BOOL isdir;
-    [manager fileExistsAtPath:path isDirectory:&isdir];
-    if (!isdir) {
-        BOOL reslut = [manager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
-        NSLog(@"%d", reslut);
-    }
-    return path;
-}
 
 /*
 #pragma mark - Navigation

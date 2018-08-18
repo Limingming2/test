@@ -11,8 +11,10 @@
 #ifndef AMIdenfier_h
 #define AMIdenfier_h
 
-NSString *const videoPath = @"lmm/video";
 
-//
+static NSString *const kVideoCellStr = @"videocellstr";
+static NSString *const kVideoPath = @"lmm/video";
+static NSString *const kVideoList2video =@"videolist2video";
+
 
 #endif /* AMIdenfier_h */

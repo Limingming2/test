@@ -9,6 +9,7 @@
 #import "AMCreateFile.h"
 
 static AMCreateFile *_fileControl;
+static NSFileManager *_filemanager;
 
 @interface AMCreateFile ()
 @property (nonatomic, assign) AMSandbox fileType;
@@ -78,7 +79,21 @@ static AMCreateFile *_fileControl;
     return [self.filemanager fileExistsAtPath:path];
 }
 
-
++ (NSArray *)filesInDir:(NSString *)path withFileType:(AMSandbox)fileType
+{
+    NSString *dirPath = [self createFileWithPath:path isDir:YES withType:fileType];
+    NSMutableArray *arr = [[self.filemanager subpathsAtPath:dirPath] mutableCopy];
+    NSMutableArray *resultArr = [NSMutableArray array];
+    for (NSString *str in arr) {
+        if ([str containsString:@".DS_Store"])
+        {}else
+        {
+            NSString *tmp = [dirPath stringByAppendingPathComponent:str];
+            [resultArr addObject:tmp];
+        }
+    }
+    return resultArr;
+}
 
 
 

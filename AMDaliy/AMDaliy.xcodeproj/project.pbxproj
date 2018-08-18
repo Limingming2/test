@@ -37,6 +37,9 @@
 		6C3EDCCE211841B1002DC635 /* UIImageView+AMImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCCD211841B1002DC635 /* UIImageView+AMImageView.m */; };
 		6C3EDCD421184A3F002DC635 /* AMVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCD321184A3F002DC635 /* AMVideoModel.m */; };
 		6C76C8A0211C449500395ADC /* AMCreateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76C89E211C449500395ADC /* AMCreateFile.m */; };
+		6C7BA7C32127EC8200ED862C /* AMVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C22127EC8200ED862C /* AMVideoCell.m */; };
+		6C7BA7C921280F3700ED862C /* HToastLab.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C621280F3700ED862C /* HToastLab.m */; };
+		6C7BA7CA21280F3700ED862C /* HToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C821280F3700ED862C /* HToastView.m */; };
 		7E93D2AEDCFE590B052ED55D /* libPods-AMDaliy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C148C6E3686C676879327F1A /* libPods-AMDaliy.a */; };
 		BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244742043DE1F00C05E75 /* AppDelegate.m */; };
 		BAB244782043DE1F00C05E75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244772043DE1F00C05E75 /* ViewController.m */; };
@@ -108,6 +111,12 @@
 		6C76C89E211C449500395ADC /* AMCreateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMCreateFile.m; sourceTree = "<group>"; };
 		6C76C89F211C449500395ADC /* AMCreateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMCreateFile.h; sourceTree = "<group>"; };
 		6C76C8A1211C44A100395ADC /* AMHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMHeader.pch; sourceTree = "<group>"; };
+		6C7BA7C12127EC8200ED862C /* AMVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMVideoCell.h; sourceTree = "<group>"; };
+		6C7BA7C22127EC8200ED862C /* AMVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMVideoCell.m; sourceTree = "<group>"; };
+		6C7BA7C521280F3700ED862C /* HToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HToastView.h; sourceTree = "<group>"; };
+		6C7BA7C621280F3700ED862C /* HToastLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HToastLab.m; sourceTree = "<group>"; };
+		6C7BA7C721280F3700ED862C /* HToastLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HToastLab.h; sourceTree = "<group>"; };
+		6C7BA7C821280F3700ED862C /* HToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HToastView.m; sourceTree = "<group>"; };
 		BAB244702043DE1F00C05E75 /* AMDaliy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMDaliy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB244732043DE1F00C05E75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAB244742043DE1F00C05E75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -147,6 +156,7 @@
 		6C145AF82125DD8100DF7BAA /* AMVideo */ = {
 			isa = PBXGroup;
 			children = (
+				6C7BA7C02127EC8200ED862C /* AMVideoView */,
 				6C145AF92125DDA700DF7BAA /* AMVideoScene.h */,
 				6C145AFA2125DDA700DF7BAA /* AMVideoScene.m */,
 				6C145AFC2125DE4700DF7BAA /* AMDownloadScene.h */,
@@ -309,10 +319,31 @@
 		6C76C89A211AF06F00395ADC /* AMTools */ = {
 			isa = PBXGroup;
 			children = (
+				6C7BA7C421280F3700ED862C /* HToast */,
 				6C76C89F211C449500395ADC /* AMCreateFile.h */,
 				6C76C89E211C449500395ADC /* AMCreateFile.m */,
 			);
 			path = AMTools;
+			sourceTree = "<group>";
+		};
+		6C7BA7C02127EC8200ED862C /* AMVideoView */ = {
+			isa = PBXGroup;
+			children = (
+				6C7BA7C12127EC8200ED862C /* AMVideoCell.h */,
+				6C7BA7C22127EC8200ED862C /* AMVideoCell.m */,
+			);
+			path = AMVideoView;
+			sourceTree = "<group>";
+		};
+		6C7BA7C421280F3700ED862C /* HToast */ = {
+			isa = PBXGroup;
+			children = (
+				6C7BA7C521280F3700ED862C /* HToastView.h */,
+				6C7BA7C621280F3700ED862C /* HToastLab.m */,
+				6C7BA7C721280F3700ED862C /* HToastLab.h */,
+				6C7BA7C821280F3700ED862C /* HToastView.m */,
+			);
+			path = HToast;
 			sourceTree = "<group>";
 		};
 		BAB244672043DE1F00C05E75 = {
@@ -389,7 +420,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AM;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = limingming;
 				TargetAttributes = {
 					BAB2446F2043DE1F00C05E75 = {
@@ -491,9 +522,11 @@
 			files = (
 				6C3EDCBB2114069B002DC635 /* AMWaterFlowLayout.m in Sources */,
 				6C3EDCCA21181EA0002DC635 /* AMBlurView.m in Sources */,
+				6C7BA7C32127EC8200ED862C /* AMVideoCell.m in Sources */,
 				6C3EDCA92114069B002DC635 /* TZAssetModel.m in Sources */,
 				6C3EDCBA2114069B002DC635 /* AMWaterFallScene.m in Sources */,
 				6C3EDCB22114069B002DC635 /* TZPhotoPreviewController.m in Sources */,
+				6C7BA7CA21280F3700ED862C /* HToastView.m in Sources */,
 				6C3EDCB82114069B002DC635 /* AMSelectImageScene.m in Sources */,
 				6C3EDCCE211841B1002DC635 /* UIImageView+AMImageView.m in Sources */,
 				6C3EDCB32114069B002DC635 /* TZProgressView.m in Sources */,
@@ -504,6 +537,7 @@
 				6C3EDCAC2114069B002DC635 /* TZImageManager.m in Sources */,
 				BAB244832043DE1F00C05E75 /* main.m in Sources */,
 				6C145AFB2125DDA700DF7BAA /* AMVideoScene.m in Sources */,
+				6C7BA7C921280F3700ED862C /* HToastLab.m in Sources */,
 				6C3EDCB52114069B002DC635 /* UIView+Layout.m in Sources */,
 				6C3EDCD421184A3F002DC635 /* AMVideoModel.m in Sources */,
 				6C145AFE2125DE4700DF7BAA /* AMDownloadScene.m in Sources */,
@@ -560,6 +594,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -567,6 +602,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -594,7 +630,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -615,6 +651,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -622,6 +659,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -643,7 +681,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -659,7 +697,7 @@
 				DEVELOPMENT_TEAM = EP2XYJWA4E;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AMDaliy/AMExpand/AMMacro/AMHeader.pch";
 				INFOPLIST_FILE = AMDaliy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoming.AMDaliy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -676,7 +714,7 @@
 				DEVELOPMENT_TEAM = EP2XYJWA4E;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AMDaliy/AMExpand/AMMacro/AMHeader.pch";
 				INFOPLIST_FILE = AMDaliy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoming.AMDaliy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

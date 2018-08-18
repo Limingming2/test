@@ -7,22 +7,47 @@
 //
 
 #import "AMPlayScene.h"
+#import <ZFPlayer/ZFPlayer.h>
+#import <ZFAVPlayerManager.h>
+#import <ZFPlayerControlView.h>
 
 @interface AMPlayScene ()
-
+@property (nonatomic, strong) ZFPlayerController *player;
+@property (nonatomic, weak) IBOutlet UIImageView *playerView;
 @end
 
 @implementation AMPlayScene
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    [self startPlayWith:self.path];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
+
+#pragma mark - private methods
+
+- (void)startPlayWith:(NSString *)path
+{
+    ZFAVPlayerManager *manager = [[ZFAVPlayerManager alloc] init];
+    self.player = [ZFPlayerController playerWithPlayerManager:manager containerView:self.playerView];
+    ZFPlayerControlView *controlView = [[ZFPlayerControlView alloc] init];
+    self.player.controlView = controlView;
+    manager.assetURL = [NSURL fileURLWithPath:path];
+}
+
+#pragma mark - setter and getter
+
+- (void)setPath:(NSString *)path
+{
+    _path = path;
+    
+}
+
 
 /*
 #pragma mark - Navigation

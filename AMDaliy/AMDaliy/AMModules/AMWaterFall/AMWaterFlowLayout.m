@@ -8,7 +8,7 @@
 
 #import "AMWaterFlowLayout.h"
 
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+
 #define kItemWidth  90
 #define kItemHeight  45
 #define kLineMargin  10
