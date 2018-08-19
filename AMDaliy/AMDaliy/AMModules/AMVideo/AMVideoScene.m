@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDatasouce) name:kDownloadOver object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -32,6 +32,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+- (void)dealloc
+{
+    NSLog(@"dealloc");
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kDownloadOver object:nil];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource

@@ -7,11 +7,14 @@
 //
 
 #import "AMControlView.h"
+#import <objc/runtime.h>
 
-#define AM_ADDBTN_WIDTH   40
-#define AM_ADDBTN_HEIGHT AM_ADDBTN_WIDTH
-#define AM_RIGHT_MARGIN   15
-#define AM_TOP_MARGIN   AM_RIGHT_MARGIN
+#define AM_ADDBTN_WIDTH     40
+#define AM_RIGHT_MARGIN     15
+#define AM_BTN_BG_ALPHA     0.6
+#define AM_ADDBTN_HEIGHT    AM_ADDBTN_WIDTH
+#define AM_TOP_MARGIN       AM_RIGHT_MARGIN
+
 
 @interface AMControlView ()
 
@@ -21,6 +24,18 @@
 @end
 
 @implementation AMControlView
+
++ (void)load
+{
+    Method targetShowMethod = class_getInstanceMethod([self class], @selector(showControlViewWithAnimated:));
+    Method oriShowMethod = class_getInstanceMethod([self superclass], @selector(showControlViewWithAnimated:));
+    method_exchangeImplementations(targetShowMethod, oriShowMethod);
+    
+    Method targetHideMethod = class_getInstanceMethod([self class], @selector(hideControlViewWithAnimated:));
+    Method oriHideMethod = class_getInstanceMethod([self superclass], @selector(hideControlViewWithAnimated:));
+    method_exchangeImplementations(targetHideMethod, oriHideMethod);
+}
+
 
 - (instancetype)init
 {
@@ -55,8 +70,6 @@
     self.txtLab.frame = CGRectMake(x + AM_ADDBTN_WIDTH, AM_TOP_MARGIN, AM_ADDBTN_WIDTH, AM_ADDBTN_HEIGHT);
     self.addBtn.frame = CGRectMake(x + AM_ADDBTN_WIDTH * 2, AM_TOP_MARGIN, AM_ADDBTN_WIDTH, AM_ADDBTN_HEIGHT);
     self.reduceBtn.frame = CGRectMake(x, AM_TOP_MARGIN, AM_ADDBTN_WIDTH, AM_ADDBTN_HEIGHT);
-    self.txtLab.textColor = [UIColor whiteColor];
-    self.txtLab.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
 }
 
 #pragma mark - setter and getter
@@ -67,6 +80,8 @@
         UILabel *txtLab = [[UILabel alloc] init];
         txtLab.textAlignment = NSTextAlignmentCenter;
         [self.portraitControlView addSubview:txtLab];
+        txtLab.textColor = [UIColor whiteColor];
+        txtLab.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:AM_BTN_BG_ALPHA];
         _txtLab = txtLab;
     }
     return _txtLab;
@@ -79,7 +94,7 @@
         [self.portraitControlView addSubview:addbtn];
         [addbtn setTitle:@"+" forState:UIControlStateNormal];
         [addbtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [addbtn setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.6]];
+        [addbtn setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:AM_BTN_BG_ALPHA]];
         _addBtn = addbtn;
     }
     return _addBtn;
@@ -92,7 +107,7 @@
         [self.portraitControlView addSubview:reduceBtn];
         [reduceBtn setTitle:@"-" forState:UIControlStateNormal];
         [reduceBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [reduceBtn setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.6]];
+        [reduceBtn setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:AM_BTN_BG_ALPHA]];
         _reduceBtn = reduceBtn;
     }
     return _reduceBtn;
@@ -109,8 +124,6 @@
     }
 }
 
-
-
 #pragma mark - private methods
 
 - (CGFloat)calculateWithAdd:(BOOL)isAdd
@@ -125,6 +138,23 @@
     result = result < 0.5 ? 0.5 : result;
     return result;
 }
+
+- (void)showControlViewWithAnimated:(BOOL)animated
+{
+    [self showControlViewWithAnimated:animated];
+    self.addBtn.hidden = NO;
+    self.reduceBtn.hidden = NO;
+    self.txtLab.hidden = NO;
+}
+
+- (void)hideControlViewWithAnimated:(BOOL)animated
+{
+    [self hideControlViewWithAnimated:animated];
+    self.addBtn.hidden = YES;
+    self.reduceBtn.hidden = YES;
+    self.txtLab.hidden = YES;
+}
+    
 
 
 @end

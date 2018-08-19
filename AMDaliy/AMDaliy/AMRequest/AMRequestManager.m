@@ -57,6 +57,7 @@ static AMRequestManager *_manager;
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         if (!error) {
             success(@{@"message":@"下载成功"});
+            [[NSNotificationCenter defaultCenter] postNotificationName:kDownloadOver object:nil];
         }else {
             fail(error);
         }
