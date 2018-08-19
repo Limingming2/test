@@ -43,10 +43,10 @@ static AMRequestManager *_manager;
     NSString *path = [AMCreateFile createFileWithPath:kVideoPath isDir:YES withType:AMDocument];
     NSString *filePath = [path stringByAppendingPathComponent:url.lastPathComponent];
     if ([AMCreateFile fileExist:filePath] ||
-        [[self singleInstanse].downloadings containsObject:urlStr]) {
+        [[self singleInstanse].downloadings containsObject:url.lastPathComponent]) {
         return nil;
     }
-    [[self singleInstanse].downloadings addObject:urlStr];
+    [[self singleInstanse].downloadings addObject:url.lastPathComponent];
     NSURLSessionDownloadTask *task = [sessionManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
         dispatch_async(dispatch_get_main_queue(), ^{
             CGFloat value = (CGFloat)downloadProgress.completedUnitCount / (CGFloat)downloadProgress.totalUnitCount;

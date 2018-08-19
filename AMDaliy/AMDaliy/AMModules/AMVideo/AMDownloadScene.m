@@ -40,8 +40,9 @@
     if (self.urlTF.text.length > 0) {
         urlStr = self.urlTF.text;
     }else {
-        urlStr = @"https://record-manual.cctalk.com/5f849fe7871b9e8284c4db9b602798c0.mp4?sign=1bb4ff45337ae6c0e0983e22b45333eb&t=5b780d4c";
-        [HToastView toast:@"请输入地址，现在是默认视频地址"];
+//        urlStr = @"https://record-manual.cctalk.com/5f849fe7871b9e8284c4db9b602798c0.mp4?sign=1bb4ff45337ae6c0e0983e22b45333eb&t=5b780d4c";
+        [HToastView toast:@"请输入地址"];
+        return ;
     }
     [AMRequestManager sendRequest:urlStr success:^(NSDictionary *dic) {
         [self downActionWithPath:dic];

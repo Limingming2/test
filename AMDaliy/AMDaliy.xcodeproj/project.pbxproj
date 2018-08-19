@@ -41,6 +41,7 @@
 		6C7BA7C921280F3700ED862C /* HToastLab.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C621280F3700ED862C /* HToastLab.m */; };
 		6C7BA7CA21280F3700ED862C /* HToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C821280F3700ED862C /* HToastView.m */; };
 		6C7BA7CE21282CC700ED862C /* AMRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7CD21282CC700ED862C /* AMRequestManager.m */; };
+		6C7BA7D42129409100ED862C /* AMControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7D32129409100ED862C /* AMControlView.m */; };
 		7E93D2AEDCFE590B052ED55D /* libPods-AMDaliy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C148C6E3686C676879327F1A /* libPods-AMDaliy.a */; };
 		BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244742043DE1F00C05E75 /* AppDelegate.m */; };
 		BAB244782043DE1F00C05E75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244772043DE1F00C05E75 /* ViewController.m */; };
@@ -120,6 +121,8 @@
 		6C7BA7C821280F3700ED862C /* HToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HToastView.m; sourceTree = "<group>"; };
 		6C7BA7CC21282CC700ED862C /* AMRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMRequestManager.h; sourceTree = "<group>"; };
 		6C7BA7CD21282CC700ED862C /* AMRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMRequestManager.m; sourceTree = "<group>"; };
+		6C7BA7D22129409100ED862C /* AMControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMControlView.h; sourceTree = "<group>"; };
+		6C7BA7D32129409100ED862C /* AMControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMControlView.m; sourceTree = "<group>"; };
 		BAB244702043DE1F00C05E75 /* AMDaliy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMDaliy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB244732043DE1F00C05E75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAB244742043DE1F00C05E75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 			children = (
 				6C7BA7C12127EC8200ED862C /* AMVideoCell.h */,
 				6C7BA7C22127EC8200ED862C /* AMVideoCell.m */,
+				6C7BA7D22129409100ED862C /* AMControlView.h */,
+				6C7BA7D32129409100ED862C /* AMControlView.m */,
 			);
 			path = AMVideoView;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 				6C3EDCB52114069B002DC635 /* UIView+Layout.m in Sources */,
 				6C7BA7CE21282CC700ED862C /* AMRequestManager.m in Sources */,
 				6C3EDCD421184A3F002DC635 /* AMVideoModel.m in Sources */,
+				6C7BA7D42129409100ED862C /* AMControlView.m in Sources */,
 				6C145AFE2125DE4700DF7BAA /* AMDownloadScene.m in Sources */,
 				6C3EDCB02114069B002DC635 /* TZPhotoPickerController.m in Sources */,
 				6C3EDCAA2114069B002DC635 /* TZGifPhotoPreviewController.m in Sources */,
@@ -707,6 +713,7 @@
 			baseConfigurationReference = FC727CBEC693D99098D9A16A /* Pods-AMDaliy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP2XYJWA4E;
 				ENABLE_BITCODE = NO;
@@ -716,6 +723,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoming.AMDaliy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -725,6 +733,7 @@
 			baseConfigurationReference = C9E8578F494E5C8273E79720 /* Pods-AMDaliy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP2XYJWA4E;
 				ENABLE_BITCODE = NO;
@@ -734,6 +743,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoming.AMDaliy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

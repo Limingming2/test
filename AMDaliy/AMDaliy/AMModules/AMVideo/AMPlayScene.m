@@ -7,9 +7,11 @@
 //
 
 #import "AMPlayScene.h"
+#import "AMControlView.h"
 #import <ZFPlayer/ZFPlayer.h>
 #import <ZFAVPlayerManager.h>
 #import <ZFPlayerControlView.h>
+#import <ZFIJKPlayerManager.h>
 
 @interface AMPlayScene ()
 @property (nonatomic, strong) ZFPlayerController *player;
@@ -33,11 +35,15 @@
 
 - (void)startPlayWith:(NSString *)path
 {
-    ZFAVPlayerManager *manager = [[ZFAVPlayerManager alloc] init];
+//    ZFAVPlayerManager *manager = [[ZFAVPlayerManager alloc] init];
+    ZFIJKPlayerManager *manager = [[ZFIJKPlayerManager alloc] init];
     self.player = [ZFPlayerController playerWithPlayerManager:manager containerView:self.playerView];
-    ZFPlayerControlView *controlView = [[ZFPlayerControlView alloc] init];
+    AMControlView *controlView = [[AMControlView alloc] init];
     self.player.controlView = controlView;
     manager.assetURL = [NSURL fileURLWithPath:path];
+    [controlView setRate:^(CGFloat rate) {
+        manager.rate = rate;
+    }];
 }
 
 #pragma mark - setter and getter
@@ -45,9 +51,12 @@
 - (void)setPath:(NSString *)path
 {
     _path = path;
-    
 }
 
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 
 /*
 #pragma mark - Navigation
