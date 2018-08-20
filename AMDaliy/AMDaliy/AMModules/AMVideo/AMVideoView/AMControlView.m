@@ -25,18 +25,6 @@
 
 @implementation AMControlView
 
-+ (void)load
-{
-    Method targetShowMethod = class_getInstanceMethod([self class], @selector(showControlViewWithAnimated:));
-    Method oriShowMethod = class_getInstanceMethod([self superclass], @selector(showControlViewWithAnimated:));
-    method_exchangeImplementations(targetShowMethod, oriShowMethod);
-    
-    Method targetHideMethod = class_getInstanceMethod([self class], @selector(hideControlViewWithAnimated:));
-    Method oriHideMethod = class_getInstanceMethod([self superclass], @selector(hideControlViewWithAnimated:));
-    method_exchangeImplementations(targetHideMethod, oriHideMethod);
-}
-
-
 - (instancetype)init
 {
     self = [super init];
@@ -139,17 +127,17 @@
     return result;
 }
 
-- (void)showControlViewWithAnimated:(BOOL)animated
+- (void)am_showControlViewWithAnimated:(BOOL)animated
 {
-    [self showControlViewWithAnimated:animated];
+    [self am_showControlViewWithAnimated:animated];
     self.addBtn.hidden = NO;
     self.reduceBtn.hidden = NO;
     self.txtLab.hidden = NO;
 }
 
-- (void)hideControlViewWithAnimated:(BOOL)animated
+- (void)am_hideControlViewWithAnimated:(BOOL)animated
 {
-    [self hideControlViewWithAnimated:animated];
+    [self am_hideControlViewWithAnimated:animated];
     self.addBtn.hidden = YES;
     self.reduceBtn.hidden = YES;
     self.txtLab.hidden = YES;

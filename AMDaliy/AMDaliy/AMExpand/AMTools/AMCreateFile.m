@@ -50,7 +50,7 @@ static NSFileManager *_filemanager;
         if (!isfile)
         {
             NSString *tmp = [resultPath stringByDeletingLastPathComponent];
-            isfile = [filemanager fileExistsAtPath:tmp isDirectory:&isdir];
+            [filemanager fileExistsAtPath:tmp isDirectory:&isdir];
             if (!isdir) {
                 [filemanager createDirectoryAtPath:tmp withIntermediateDirectories:YES attributes:nil error:&error];
             }

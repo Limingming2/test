@@ -58,6 +58,7 @@ static AMBlurView *_blurView;
     CIContext *context = [CIContext contextWithOptions:nil];
     CGImageRef cgimg = [context createCGImage:outputImage fromRect:[inputImage extent]];
     UIImage *convertedImage = [UIImage imageWithCGImage:cgimg];
+    CGImageRelease(cgimg);
     return convertedImage;
 }
 

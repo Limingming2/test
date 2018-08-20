@@ -36,6 +36,7 @@
 		6C3EDCCA21181EA0002DC635 /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCC921181E9F002DC635 /* AMBlurView.m */; };
 		6C3EDCCE211841B1002DC635 /* UIImageView+AMImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCCD211841B1002DC635 /* UIImageView+AMImageView.m */; };
 		6C3EDCD421184A3F002DC635 /* AMVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EDCD321184A3F002DC635 /* AMVideoModel.m */; };
+		6C5F1289212A6ABC0031031D /* ZFPlayerControlView+AMControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F1288212A6ABC0031031D /* ZFPlayerControlView+AMControl.m */; };
 		6C76C8A0211C449500395ADC /* AMCreateFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C76C89E211C449500395ADC /* AMCreateFile.m */; };
 		6C7BA7C32127EC8200ED862C /* AMVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C22127EC8200ED862C /* AMVideoCell.m */; };
 		6C7BA7C921280F3700ED862C /* HToastLab.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BA7C621280F3700ED862C /* HToastLab.m */; };
@@ -110,6 +111,8 @@
 		6C3EDCD221184A3F002DC635 /* AMVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMVideoModel.h; sourceTree = "<group>"; };
 		6C3EDCD321184A3F002DC635 /* AMVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMVideoModel.m; sourceTree = "<group>"; };
 		6C5F127D2126D22A0031031D /* AMIdenfier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMIdenfier.h; sourceTree = "<group>"; };
+		6C5F1287212A6ABC0031031D /* ZFPlayerControlView+AMControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZFPlayerControlView+AMControl.h"; sourceTree = "<group>"; };
+		6C5F1288212A6ABC0031031D /* ZFPlayerControlView+AMControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZFPlayerControlView+AMControl.m"; sourceTree = "<group>"; };
 		6C76C89E211C449500395ADC /* AMCreateFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMCreateFile.m; sourceTree = "<group>"; };
 		6C76C89F211C449500395ADC /* AMCreateFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMCreateFile.h; sourceTree = "<group>"; };
 		6C76C8A1211C44A100395ADC /* AMHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMHeader.pch; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				6C7BA7C22127EC8200ED862C /* AMVideoCell.m */,
 				6C7BA7D22129409100ED862C /* AMControlView.h */,
 				6C7BA7D32129409100ED862C /* AMControlView.m */,
+				6C5F1287212A6ABC0031031D /* ZFPlayerControlView+AMControl.h */,
+				6C5F1288212A6ABC0031031D /* ZFPlayerControlView+AMControl.m */,
 			);
 			path = AMVideoView;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */,
 				6C3EDCAF2114069B002DC635 /* TZLocationManager.m in Sources */,
 				6C3EDCB72114069B002DC635 /* AMFMDB.m in Sources */,
+				6C5F1289212A6ABC0031031D /* ZFPlayerControlView+AMControl.m in Sources */,
 				6C76C8A0211C449500395ADC /* AMCreateFile.m in Sources */,
 				6C3EDCBF2114506E002DC635 /* AMPlayerListScene.m in Sources */,
 				6C145B012125DE7800DF7BAA /* AMPlayScene.m in Sources */,
