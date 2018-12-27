@@ -7,6 +7,7 @@
 //
 
 #import "AMLoginScene.h"
+#import "AMNameTF.h"
 
 @interface AMLoginScene () <UITextFieldDelegate>
 
@@ -32,12 +33,14 @@
     [super viewWillAppear:animated];
     // 使用通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldHaveChanged:) name:UITextFieldTextDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardDidShowNotification object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +49,11 @@
 }
 
 #pragma mark - user action
+
+- (void)keyboardShow:(NSNotification *)noti
+{
+    NSLog(@"%@", noti.object);
+}
 
 - (IBAction)certainAction:(id)sender
 {
