@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol AMReceiveDelegate <NSObject>
+
+@property (nonatomic, strong) NSMutableArray *arr;
+
+@end
+
+
 
 @interface AMLoginScene : UIViewController
 
+@property (nonatomic, assign) id<AMReceiveDelegate> delegate;
 @end

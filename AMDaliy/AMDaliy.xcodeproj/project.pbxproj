@@ -41,12 +41,17 @@
 		BA2A8E0321A69CB700DD822F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2A8E0221A69CB700DD822F /* Security.framework */; };
 		BA2A8E0521A6A00500DD822F /* Web in Resources */ = {isa = PBXBuildFile; fileRef = BA2A8E0421A6A00400DD822F /* Web */; };
 		BA84499521D4C0DD0051FB9B /* AMNameTF.m in Sources */ = {isa = PBXBuildFile; fileRef = BA84499421D4C0DD0051FB9B /* AMNameTF.m */; };
+		BA8449B021D62F9D0051FB9B /* btc未点@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA8449AF21D62F9D0051FB9B /* btc未点@1x.png */; };
+		BA8449B321D632960051FB9B /* AMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8449B221D632960051FB9B /* AMButton.m */; };
 		BAB244752043DE1F00C05E75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244742043DE1F00C05E75 /* AppDelegate.m */; };
 		BAB244782043DE1F00C05E75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244772043DE1F00C05E75 /* ViewController.m */; };
 		BAB2447B2043DE1F00C05E75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB244792043DE1F00C05E75 /* Main.storyboard */; };
 		BAB2447D2043DE1F00C05E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB2447C2043DE1F00C05E75 /* Assets.xcassets */; };
 		BAB244802043DE1F00C05E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB2447E2043DE1F00C05E75 /* LaunchScreen.storyboard */; };
 		BAB244832043DE1F00C05E75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB244822043DE1F00C05E75 /* main.m */; };
+		BAC04FA321DE1B89001ED35A /* AMEnableOneScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC04FA221DE1B89001ED35A /* AMEnableOneScene.m */; };
+		BAC04FA621DE1B99001ED35A /* AMEnableTwoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC04FA521DE1B99001ED35A /* AMEnableTwoScene.m */; };
+		BAC04FA921DE1BA9001ED35A /* AMEnableThreeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC04FA821DE1BA9001ED35A /* AMEnableThreeScene.m */; };
 		BAE2B82E21AE339500F1B5E6 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE2B7F321AE339500F1B5E6 /* DDData.m */; };
 		BAE2B82F21AE339500F1B5E6 /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE2B7F521AE339500F1B5E6 /* DDNumber.m */; };
 		BAE2B83021AE339500F1B5E6 /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE2B7F721AE339500F1B5E6 /* DDRange.m */; };
@@ -75,6 +80,19 @@
 		BAE2B84721AE339500F1B5E6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BAE2B82B21AE339500F1B5E6 /* README.txt */; };
 		BAE2B84821AE339500F1B5E6 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE2B82D21AE339500F1B5E6 /* WebSocket.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA8449A721D4D6990051FB9B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6C3EDC792114069A002DC635 /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
@@ -141,6 +159,9 @@
 		BA2A8E0421A6A00400DD822F /* Web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Web; sourceTree = "<group>"; };
 		BA84499321D4C0DD0051FB9B /* AMNameTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMNameTF.h; sourceTree = "<group>"; };
 		BA84499421D4C0DD0051FB9B /* AMNameTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMNameTF.m; sourceTree = "<group>"; };
+		BA8449AF21D62F9D0051FB9B /* btc未点@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btc未点@1x.png"; sourceTree = "<group>"; };
+		BA8449B121D632960051FB9B /* AMButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMButton.h; sourceTree = "<group>"; };
+		BA8449B221D632960051FB9B /* AMButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMButton.m; sourceTree = "<group>"; };
 		BAB244702043DE1F00C05E75 /* AMDaliy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMDaliy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB244732043DE1F00C05E75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAB244742043DE1F00C05E75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +172,12 @@
 		BAB2447F2043DE1F00C05E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAB244812043DE1F00C05E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAB244822043DE1F00C05E75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAC04FA121DE1B89001ED35A /* AMEnableOneScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMEnableOneScene.h; sourceTree = "<group>"; };
+		BAC04FA221DE1B89001ED35A /* AMEnableOneScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMEnableOneScene.m; sourceTree = "<group>"; };
+		BAC04FA421DE1B99001ED35A /* AMEnableTwoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMEnableTwoScene.h; sourceTree = "<group>"; };
+		BAC04FA521DE1B99001ED35A /* AMEnableTwoScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMEnableTwoScene.m; sourceTree = "<group>"; };
+		BAC04FA721DE1BA9001ED35A /* AMEnableThreeScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMEnableThreeScene.h; sourceTree = "<group>"; };
+		BAC04FA821DE1BA9001ED35A /* AMEnableThreeScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMEnableThreeScene.m; sourceTree = "<group>"; };
 		BAE2B7F221AE339500F1B5E6 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
 		BAE2B7F321AE339500F1B5E6 /* DDData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDData.m; sourceTree = "<group>"; };
 		BAE2B7F421AE339500F1B5E6 /* DDNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumber.h; sourceTree = "<group>"; };
@@ -301,6 +328,14 @@
 			children = (
 				6C3EDC982114069B002DC635 /* AMLoginScene.h */,
 				6C3EDC992114069B002DC635 /* AMLoginScene.m */,
+				BA8449B121D632960051FB9B /* AMButton.h */,
+				BA8449B221D632960051FB9B /* AMButton.m */,
+				BAC04FA121DE1B89001ED35A /* AMEnableOneScene.h */,
+				BAC04FA221DE1B89001ED35A /* AMEnableOneScene.m */,
+				BAC04FA421DE1B99001ED35A /* AMEnableTwoScene.h */,
+				BAC04FA521DE1B99001ED35A /* AMEnableTwoScene.m */,
+				BAC04FA721DE1BA9001ED35A /* AMEnableThreeScene.h */,
+				BAC04FA821DE1BA9001ED35A /* AMEnableThreeScene.m */,
 			);
 			path = AMEnableBtn;
 			sourceTree = "<group>";
@@ -445,6 +480,7 @@
 				BA2A8E0421A6A00400DD822F /* Web */,
 				BAB244792043DE1F00C05E75 /* Main.storyboard */,
 				BAB2447C2043DE1F00C05E75 /* Assets.xcassets */,
+				BA8449AF21D62F9D0051FB9B /* btc未点@1x.png */,
 				BAB2447E2043DE1F00C05E75 /* LaunchScreen.storyboard */,
 				BAB244812043DE1F00C05E75 /* Info.plist */,
 				BAB244822043DE1F00C05E75 /* main.m */,
@@ -590,6 +626,7 @@
 				BAB2446D2043DE1F00C05E75 /* Frameworks */,
 				BAB2446E2043DE1F00C05E75 /* Resources */,
 				FACB24C64B672EBF3A18216E /* [CP] Copy Pods Resources */,
+				BA8449A721D4D6990051FB9B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -643,6 +680,7 @@
 				BAB244802043DE1F00C05E75 /* LaunchScreen.storyboard in Resources */,
 				6C3EDCAD2114069B002DC635 /* TZImagePickerController.bundle in Resources */,
 				BAB2447D2043DE1F00C05E75 /* Assets.xcassets in Resources */,
+				BA8449B021D62F9D0051FB9B /* btc未点@1x.png in Resources */,
 				BAB2447B2043DE1F00C05E75 /* Main.storyboard in Resources */,
 				BAE2B84721AE339500F1B5E6 /* README.txt in Resources */,
 				BA2A8E0521A6A00500DD822F /* Web in Resources */,
@@ -701,6 +739,7 @@
 				BAE2B83D21AE339500F1B5E6 /* HTTPRedirectResponse.m in Sources */,
 				BAE2B83921AE339500F1B5E6 /* HTTPDataResponse.m in Sources */,
 				BAE2B83221AE339500F1B5E6 /* HTTPConnection.m in Sources */,
+				BAC04FA621DE1B99001ED35A /* AMEnableTwoScene.m in Sources */,
 				6C3EDCCA21181EA0002DC635 /* AMBlurView.m in Sources */,
 				6C3EDCA92114069B002DC635 /* TZAssetModel.m in Sources */,
 				BAE2B83121AE339500F1B5E6 /* HTTPAuthenticationRequest.m in Sources */,
@@ -745,11 +784,14 @@
 				6C3EDCB72114069B002DC635 /* AMFMDB.m in Sources */,
 				6C76C8A0211C449500395ADC /* AMCreateFile.m in Sources */,
 				BAE2B83F21AE339500F1B5E6 /* GCDAsyncSocket.m in Sources */,
+				BAC04FA321DE1B89001ED35A /* AMEnableOneScene.m in Sources */,
 				6C3EDCBF2114506E002DC635 /* AMPlayerListScene.m in Sources */,
+				BA8449B321D632960051FB9B /* AMButton.m in Sources */,
 				6C3EDCB62114069B002DC635 /* AMLoginScene.m in Sources */,
 				BAE2B83021AE339500F1B5E6 /* DDRange.m in Sources */,
 				6C3EDCAB2114069B002DC635 /* TZImageCropManager.m in Sources */,
 				6C3EDCAE2114069B002DC635 /* TZImagePickerController.m in Sources */,
+				BAC04FA921DE1BA9001ED35A /* AMEnableThreeScene.m in Sources */,
 				6C3EDCC2211461CD002DC635 /* AMPlayerCell.m in Sources */,
 				BAE2B83821AE339500F1B5E6 /* HTTPAsyncFileResponse.m in Sources */,
 				6C3EDCB12114069B002DC635 /* TZPhotoPreviewCell.m in Sources */,
@@ -826,7 +868,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -875,7 +917,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -888,7 +930,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EP2XYJWA4E;
+				DEVELOPMENT_TEAM = QXFW36UK36;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AMDaliy/AMExpand/AMMacro/AMHeader.pch";
 				INFOPLIST_FILE = AMDaliy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -905,7 +947,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EP2XYJWA4E;
+				DEVELOPMENT_TEAM = QXFW36UK36;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AMDaliy/AMExpand/AMMacro/AMHeader.pch";
 				INFOPLIST_FILE = AMDaliy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

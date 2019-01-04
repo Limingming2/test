@@ -7,7 +7,9 @@
 //
 
 #import "AMLoginScene.h"
+#import "AMEnableOneScene.h"
 #import "AMNameTF.h"
+#import "AMButton.h"
 
 @interface AMLoginScene () <UITextFieldDelegate>
 
@@ -31,6 +33,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    NSLog(@"%@", self.delegate.arr);
     // 使用通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldHaveChanged:) name:UITextFieldTextDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -58,6 +61,8 @@
 - (IBAction)certainAction:(id)sender
 {
     NSLog(@"确定");
+    [self performSegueWithIdentifier:@"main2one" sender:nil];
+    
 }
 
 - (IBAction)agreeAction:(id)sender
@@ -92,18 +97,22 @@
 
 - (void)changeCertainBtnState
 {
-    self.certainBtn.enabled = [self judgeBtnEnable];
+    self.certainBtn.enabled = YES;// [self judgeBtnEnable];
     self.certainBtn.backgroundColor = self.certainBtn.enabled ? [UIColor blueColor] : [UIColor grayColor];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[AMEnableOneScene class]]) {
+        
+        self.delegate = segue.destinationViewController;
+        self.delegate.arr = [@[] mutableCopy];
+    }
 }
-*/
+
 
 @end
