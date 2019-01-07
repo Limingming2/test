@@ -234,6 +234,33 @@
                                             <segue destination="LS4-AK-0VU" kind="show" id="SAc-tw-MTd"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Amo-OW-rSK">
+                                        <rect key="frame" x="0.0" y="255" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Amo-OW-rSK" id="nuq-b3-Tck">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="algo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKc-u5-Pqg">
+                                                    <rect key="frame" x="15" y="11.5" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Ygl-zd-agU"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="hey-cA-ONv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JKc-u5-Pqg" firstAttribute="centerY" secondItem="nuq-b3-Tck" secondAttribute="centerY" id="P0j-1i-miq"/>
+                                                <constraint firstItem="JKc-u5-Pqg" firstAttribute="leading" secondItem="nuq-b3-Tck" secondAttribute="leading" constant="15" id="fAP-SE-7d2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Dvm-B9-TWh" kind="show" id="MbB-HM-50U"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -249,6 +276,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrr-Lw-ypT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="358" y="385"/>
+        </scene>
+        <!--Daily Scene-->
+        <scene sceneID="jQQ-rk-ag2">
+            <objects>
+                <viewController id="Dvm-B9-TWh" customClass="AMDailyScene" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MrQ-DO-RgK"/>
+                        <viewControllerLayoutGuide type="bottom" id="IJI-2Y-tD8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4GU-PG-Yho">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVS-Ce-4Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="1098"/>
         </scene>
         <!--选择图片-->
         <scene sceneID="rSr-Jk-O1f">

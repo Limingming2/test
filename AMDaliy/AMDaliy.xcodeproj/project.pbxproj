@@ -52,6 +52,7 @@
 		BAC04FA321DE1B89001ED35A /* AMEnableOneScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC04FA221DE1B89001ED35A /* AMEnableOneScene.m */; };
 		BAC04FA621DE1B99001ED35A /* AMEnableTwoScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC04FA521DE1B99001ED35A /* AMEnableTwoScene.m */; };
 		BAC04FA921DE1BA9001ED35A /* AMEnableThreeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC04FA821DE1BA9001ED35A /* AMEnableThreeScene.m */; };
+		BAC04FAD21DF371F001ED35A /* AMDailyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC04FAC21DF371F001ED35A /* AMDailyScene.m */; };
 		BAE2B82E21AE339500F1B5E6 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE2B7F321AE339500F1B5E6 /* DDData.m */; };
 		BAE2B82F21AE339500F1B5E6 /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE2B7F521AE339500F1B5E6 /* DDNumber.m */; };
 		BAE2B83021AE339500F1B5E6 /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE2B7F721AE339500F1B5E6 /* DDRange.m */; };
@@ -178,6 +179,8 @@
 		BAC04FA521DE1B99001ED35A /* AMEnableTwoScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMEnableTwoScene.m; sourceTree = "<group>"; };
 		BAC04FA721DE1BA9001ED35A /* AMEnableThreeScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMEnableThreeScene.h; sourceTree = "<group>"; };
 		BAC04FA821DE1BA9001ED35A /* AMEnableThreeScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMEnableThreeScene.m; sourceTree = "<group>"; };
+		BAC04FAB21DF371F001ED35A /* AMDailyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMDailyScene.h; sourceTree = "<group>"; };
+		BAC04FAC21DF371F001ED35A /* AMDailyScene.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = AMDailyScene.m; sourceTree = "<group>"; };
 		BAE2B7F221AE339500F1B5E6 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
 		BAE2B7F321AE339500F1B5E6 /* DDData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDData.m; sourceTree = "<group>"; };
 		BAE2B7F421AE339500F1B5E6 /* DDNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumber.h; sourceTree = "<group>"; };
@@ -312,6 +315,7 @@
 		6C3EDC962114069B002DC635 /* AMModules */ = {
 			isa = PBXGroup;
 			children = (
+				BAC04FAA21DF36FF001ED35A /* AMDaily */,
 				BA84499221D4C0B60051FB9B /* AMKeyboard */,
 				BA2A8D9821A65F5F00DD822F /* AMHTTPServer */,
 				6C3EDCBC2114503B002DC635 /* AMPlayerList */,
@@ -486,6 +490,15 @@
 				BAB244822043DE1F00C05E75 /* main.m */,
 			);
 			path = AMDaliy;
+			sourceTree = "<group>";
+		};
+		BAC04FAA21DF36FF001ED35A /* AMDaily */ = {
+			isa = PBXGroup;
+			children = (
+				BAC04FAB21DF371F001ED35A /* AMDailyScene.h */,
+				BAC04FAC21DF371F001ED35A /* AMDailyScene.m */,
+			);
+			path = AMDaily;
 			sourceTree = "<group>";
 		};
 		BAE2B7F021AE339500F1B5E6 /* HTTPServer */ = {
@@ -742,6 +755,7 @@
 				BAC04FA621DE1B99001ED35A /* AMEnableTwoScene.m in Sources */,
 				6C3EDCCA21181EA0002DC635 /* AMBlurView.m in Sources */,
 				6C3EDCA92114069B002DC635 /* TZAssetModel.m in Sources */,
+				BAC04FAD21DF371F001ED35A /* AMDailyScene.m in Sources */,
 				BAE2B83121AE339500F1B5E6 /* HTTPAuthenticationRequest.m in Sources */,
 				6C3EDCBA2114069B002DC635 /* AMWaterFallScene.m in Sources */,
 				6C3EDCB22114069B002DC635 /* TZPhotoPreviewController.m in Sources */,
